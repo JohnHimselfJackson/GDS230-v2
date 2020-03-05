@@ -225,7 +225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &98334987
 PrefabInstance:
@@ -238,6 +238,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Base Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -294,10 +304,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -308,6 +338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -372,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
@@ -565,6 +600,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -620,6 +665,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -629,6 +684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -650,6 +710,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &470557440 stripped
@@ -669,6 +734,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -725,10 +800,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -739,6 +834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -853,7 +953,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 23
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &563198338
 GameObject:
@@ -960,7 +1060,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &582901844
 PrefabInstance:
@@ -973,6 +1073,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1029,10 +1139,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1043,6 +1173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -1063,6 +1198,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1119,10 +1264,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1133,6 +1298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -1153,6 +1323,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1209,10 +1389,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1223,6 +1423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -1243,6 +1448,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1299,6 +1514,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &852232556 stripped
@@ -1318,6 +1563,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1374,6 +1629,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
@@ -1383,6 +1648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1404,6 +1674,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &942230851 stripped
@@ -1411,91 +1686,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
     type: 3}
   m_PrefabInstance: {fileID: 942230850}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1056784424
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2035032448}
-    m_Modifications:
-    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
---- !u!4 &1056784425 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-    type: 3}
-  m_PrefabInstance: {fileID: 1056784424}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1224138338
 GameObject:
@@ -1588,6 +1778,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Floor (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1643,6 +1843,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -1652,6 +1857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1673,6 +1883,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &1282024732 stripped
@@ -1692,6 +1907,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1748,10 +1973,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1762,6 +2007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -1782,6 +2032,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1837,6 +2097,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -1979,7 +2269,7 @@ PrefabInstance:
     - target: {fileID: 8508798770242132508, guid: c08374f35150c2247a62eea4eb4021f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8508798770242132508, guid: c08374f35150c2247a62eea4eb4021f9,
         type: 3}
@@ -2015,6 +2305,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2054,7 +2354,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2071,6 +2371,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -2080,6 +2390,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2164,7 +2484,7 @@ PrefabInstance:
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
@@ -2199,6 +2519,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2255,10 +2585,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2269,6 +2619,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -2289,6 +2644,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2345,10 +2710,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2359,6 +2744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -2379,6 +2769,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2435,10 +2835,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2449,6 +2869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -2469,6 +2894,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2508,7 +2943,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2525,6 +2960,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -2534,6 +2979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2574,6 +3024,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2630,6 +3090,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -2639,6 +3109,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2660,6 +3135,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &1718192695 stripped
@@ -2680,15 +3160,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHeavy
       objectReference: {fileID: 0}
+    - target: {fileID: 7436091223672849902, guid: e9bb1c3430810414cbd32c73e28a75a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7436091223672849890, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7842093
+      value: 0.831
       objectReference: {fileID: 0}
     - target: {fileID: 7436091223672849890, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7152877
+      value: 1.731
       objectReference: {fileID: 0}
     - target: {fileID: 7436091223672849890, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
@@ -2718,7 +3203,7 @@ PrefabInstance:
     - target: {fileID: 7436091223672849890, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7436091223672849890, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
@@ -2748,6 +3233,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2804,6 +3299,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -2813,6 +3318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2834,6 +3344,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &1733153310 stripped
@@ -2853,6 +3368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyGrunt
+      objectReference: {fileID: 0}
+    - target: {fileID: 534508758407241172, guid: a35d0f6253dce7340a988035ed293d22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
@@ -2923,6 +3443,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2978,10 +3508,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2992,6 +3542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -3012,6 +3567,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3068,6 +3633,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -3077,6 +3652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3098,6 +3678,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
 --- !u!4 &1852240905 stripped
@@ -3117,6 +3702,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3173,10 +3768,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3187,6 +3802,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -3207,6 +3827,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3261,6 +3891,36 @@ PrefabInstance:
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3376,7 +4036,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017530427
 PrefabInstance:
@@ -3389,6 +4049,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3445,10 +4115,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3459,6 +4149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -3495,7 +4190,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1056784425}
   - {fileID: 1922756704}
   - {fileID: 1391478377}
   - {fileID: 677180987}
@@ -3510,6 +4204,7 @@ Transform:
   - {fileID: 470557440}
   - {fileID: 98334988}
   - {fileID: 2071342826}
+  - {fileID: 528192268}
   - {fileID: 1282024732}
   - {fileID: 1718192695}
   - {fileID: 1733153310}
@@ -3518,7 +4213,6 @@ Transform:
   - {fileID: 582901845}
   - {fileID: 1917794764}
   - {fileID: 2017530428}
-  - {fileID: 528192268}
   - {fileID: 563198341}
   - {fileID: 26621093}
   - {fileID: 2145549602}
@@ -3539,6 +4233,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Base Floor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_TagString
+      value: Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3595,6 +4299,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_Size.x
@@ -3604,6 +4313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3624,6 +4338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
@@ -3738,5 +4457,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
