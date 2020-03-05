@@ -119,6 +119,7 @@ public class GruntScript : GenericEnemy
             {
                 // sets the variable keeping track of shooting started to false to avoid the weapon doing its shoot function multiple times
                 shooting = false;
+                print("calling Shoot");
                 shoot();
             }
         }
@@ -387,6 +388,7 @@ public class GruntScript : GenericEnemy
                 patrolling = true;
                 waitTime = -1;
                 CheckFacing();
+                CancelInvoke("PlayerRaycastable");
             }
             else
             {

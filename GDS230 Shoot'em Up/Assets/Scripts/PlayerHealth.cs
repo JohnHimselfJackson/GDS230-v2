@@ -18,6 +18,10 @@ public class PlayerHealth : MonoBehaviour
             //Invoke PlayerDead for animation duration
             PlayerDead();
         }
+        else
+        {
+            print("player has " + health + " remaining"); 
+        }
     }
 
     void PlayerDead()

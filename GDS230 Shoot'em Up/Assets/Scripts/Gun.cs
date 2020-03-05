@@ -29,12 +29,10 @@ public class Gun : MonoBehaviour
     public void StartShooting()
     {
         shooting = true;
-        print("Shooting Started");
     }
 
     public void StopShooting()
     {
-        print("Shooting Started");
         shooting = false;
     }
 }

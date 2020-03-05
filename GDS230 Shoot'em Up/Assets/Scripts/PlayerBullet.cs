@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class PlayerBullet : MonoBehaviour
 {
 
-    public float speed = 20f;
+    public float speed = 15;
     public Rigidbody2D rb;
 
     void Start()
@@ -15,7 +15,6 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.name);
         Destroy(gameObject);
     }
 }

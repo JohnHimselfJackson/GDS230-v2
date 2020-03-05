@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class EnemyBulletScript : MonoBehaviour
 {
     void Start()
     {
@@ -14,9 +14,12 @@ public class BulletScript : MonoBehaviour
         GameObject GO = collision.gameObject;
         if (GO.CompareTag("Player"))
         {
-            //damage player
+            GO.GetComponent<PlayerHealth>().Damage(1);
         }
-        Destroy(this.gameObject);
+        else if(GO.tag != "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
