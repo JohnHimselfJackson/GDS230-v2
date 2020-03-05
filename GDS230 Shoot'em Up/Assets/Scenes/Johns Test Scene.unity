@@ -536,6 +536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 534508758407241172, guid: a35d0f6253dce7340a988035ed293d22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -711,6 +716,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508798770242132513, guid: c08374f35150c2247a62eea4eb4021f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8508798770242132508, guid: c08374f35150c2247a62eea4eb4021f9,
         type: 3}
