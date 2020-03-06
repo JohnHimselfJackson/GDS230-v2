@@ -22,12 +22,8 @@ public class BossScript : MonoBehaviour
     float playerWidth = 0.6f;
 
 
-
-    bool areaEntered = false;
     bool immune = true;
     bool initiating = true;
-
-    bool MortarBarrageStarted = false;
 
     bool laserSweepStarted = false;
 
@@ -44,6 +40,7 @@ public class BossScript : MonoBehaviour
     int myHealth = 1000;
     int myArmour = 1;
     int stage = 0;
+    public List<GameObject> drops = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +56,7 @@ public class BossScript : MonoBehaviour
             case 0:
                 if (player.transform.position.x > bossAreaStart.x)
                 {
-                    stage = 1;
+                    stage = 3;
                 }
                 break;
             case 1:
@@ -188,7 +185,7 @@ public class BossScript : MonoBehaviour
             if (attackWaitTime < 0)
             {
                 Laser();
-                attackWaitTime = 8;
+                attackWaitTime = 5;
             }
             else
             {
@@ -255,7 +252,6 @@ public class BossScript : MonoBehaviour
                 mortarXs[mm] = potentialLandingLocation;
             }
         }
-        MortarBarrageStarted = true;
 
         for (int mm = 0; mm <= 9; mm++)
         {
@@ -285,26 +281,21 @@ public class BossScript : MonoBehaviour
         float angle = Vector3.Angle(toStart, toEnd);
 
         float baseAngle = - Vector3.Angle(Vector3.down, toStart);
-        if (!laserSweepStarted)
-        {
-            float startingAngle = baseAngle - Random.Range(0, angle);
+        float startingAngle = baseAngle - Random.Range(0, angle);
 
-            RaycastHit2D initialHit = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))));
+        RaycastHit2D initialHit = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))));
             
-            Vector3 hitPoint = initialHit.point;
-            Vector3 laserVector = hitPoint - laserStartPoint;
-            float laserLength = Vector3.Distance(laserStartPoint, hitPoint);
-            Vector3 laserMidPoint = (hitPoint + laserStartPoint) / 2;
+        Vector3 hitPoint = initialHit.point;
+        Vector3 laserVector = hitPoint - laserStartPoint;
+        float laserLength = Vector3.Distance(laserStartPoint, hitPoint);
+        Vector3 laserMidPoint = (hitPoint + laserStartPoint) / 2;
 
 
-            bossLaser = Instantiate(laserInstance, laserMidPoint, Quaternion.Euler(0, 0, startingAngle));
-            bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(bossLaser.GetComponent<SpriteRenderer>().size.x , laserLength);
-            bossLaser.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Tiled;
-            bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(bossLaser.GetComponent<SpriteRenderer>().size.x, laserLength);
+        bossLaser = Instantiate(laserInstance, laserMidPoint, Quaternion.Euler(0, 0, startingAngle));
+        bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(bossLaser.GetComponent<SpriteRenderer>().size.x , laserLength);
+        bossLaser.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Tiled;
+        bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(bossLaser.GetComponent<SpriteRenderer>().size.x, laserLength);
             bossLaser.transform.localScale = new Vector3(1, 1, 1);
-            laserSweepStarted = true;
-
-        }
 
 
         //shoots a raycast out for laser
@@ -327,6 +318,12 @@ public class BossScript : MonoBehaviour
         // determine rotation of bullet and the direction
         GameObject bullet = Instantiate(projectile, (gameObject.transform.position + startDisplacement), gameObject.transform.rotation * Quaternion.Euler(new Vector3(0, 0, Random.Range(-shotArc / 2, shotArc / 2))));
         bullet.GetComponent<Rigidbody2D>().AddForce(-bullet.transform.right * bulletSpeed);
+    }
+
+    public void DropLoot()
+    {
+        GameObject drop = Instantiate<GameObject>(drops[Random.Range(0, 2)], transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
     }
 
 
