@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossScript : MonoBehaviour
 {
@@ -220,7 +221,9 @@ public class BossScript : MonoBehaviour
     }
     void DeathStage()
     {
+        InvokeRepeating("DropLoot", 0.1f, 0.2f);
         print("boss dead");
+        Invoke("ToPostGameScreen", 10f);
     }
     #endregion
 
@@ -311,8 +314,7 @@ public class BossScript : MonoBehaviour
 
 
     #endregion
-
-
+    
     void CreateBullet()
     {
         // determine rotation of bullet and the direction
@@ -322,9 +324,12 @@ public class BossScript : MonoBehaviour
 
     public void DropLoot()
     {
-        GameObject drop = Instantiate<GameObject>(drops[Random.Range(0, 2)], transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        GameObject drop = Instantiate<GameObject>(drops[Random.Range(0, drops.Count)], transform.position + Vector3.up * 0.5f, Quaternion.identity);
         drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
     }
 
-
+    void ToPostGameScreen()
+    {
+        //SceneManager.LoadScene();
+    }
 }

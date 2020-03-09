@@ -14,7 +14,7 @@ public class EnemyBulletScript : MonoBehaviour
         GameObject GO = collision.gameObject;
         if (GO.CompareTag("Player"))
         {
-            GO.GetComponent<PlayerHealth>().Damage(1);
+            GO.GetComponent<PlayerHealth>().Damage(2);
         }
         else if(GO.tag != "Enemy")
         {

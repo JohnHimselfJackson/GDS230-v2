@@ -26,8 +26,23 @@ public class MortarLandingScript : MonoBehaviour
     IEnumerator Explode()
     {
         GetComponent<Animator>().Play("MortarExplosionAnimation");
+        Physics2D.BoxCastAll(transform.position , new Vector2(0.5f,0.5f), 0, Vector2.zero);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
+
+    void CheckForPlayer(RaycastHit2D[] hits)
+    {
+        for (int cc = 0; cc < hits.Length; cc++)
+        {
+            if (hits[cc].collider.gameObject.CompareTag("Players"))
+            {
+                hits[cc].collider.gameObject.GetComponent<PlayerHealth>().Damage(5);
+            }
+        }
+        
+    }
+
+
 
 }
