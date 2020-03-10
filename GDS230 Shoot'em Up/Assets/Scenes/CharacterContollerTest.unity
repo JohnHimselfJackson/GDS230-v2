@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 26621093}
   - component: {fileID: 26621092}
   - component: {fileID: 26621091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (5)
   m_TagString: Barrier
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 528192268}
   - component: {fileID: 528192267}
   - component: {fileID: 528192266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (3)
   m_TagString: Barrier
   m_Icon: {fileID: 0}
@@ -1272,7 +1272,7 @@ GameObject:
   - component: {fileID: 563198341}
   - component: {fileID: 563198340}
   - component: {fileID: 563198339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (4)
   m_TagString: Barrier
   m_Icon: {fileID: 0}
@@ -2461,6 +2461,26 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1316428105}
+    - target: {fileID: 5122887545392366793, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122887545392366793, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_AirControl
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122887545392366794, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: a25bf4ebe5f4b774ebe017c6e56212ce, type: 2}
+    - target: {fileID: 5842442646439727166, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a9d7bc97a433468ef8dc84255217d, type: 3}
 --- !u!4 &1298356430 stripped
@@ -4784,7 +4804,7 @@ GameObject:
   - component: {fileID: 2009111368}
   - component: {fileID: 2009111367}
   - component: {fileID: 2009111366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (7)
   m_TagString: Barrier
   m_Icon: {fileID: 0}
@@ -5019,7 +5039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2035032448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5210,7 +5230,7 @@ GameObject:
   - component: {fileID: 2145549602}
   - component: {fileID: 2145549601}
   - component: {fileID: 2145549600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (6)
   m_TagString: Barrier
   m_Icon: {fileID: 0}
