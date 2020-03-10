@@ -55,6 +55,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+/Library/
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -74,5 +75,4 @@ GDS230 Shoot'em Up/Library/ScriptAssemblies/UnityEngine.UI.dll
 GDS230 Shoot'em Up/Library/shadercompiler-UnityShaderCompiler.exe0.log
 GDS230 Shoot'em Up/Library/shadercompiler-UnityShaderCompiler.exe0.log
 
-/Library/
 GDS230 Shoot'em Up/Library/
