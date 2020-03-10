@@ -10,7 +10,7 @@ public class PlayerRifle : GenericPlayerWeapon
     float baseProjectileSizeMulti = 1f;
     float baseAmmoPerShot = 0.8f;
 
-    void GenerateRandomPistolStats(float qualityDecimal)
+    public override void GenerateRandomWeaponStats(float qualityDecimal)
     {
         fireRate = baseFireRate * (1 + Random.Range(-0.1f * (1/qualityDecimal), 2 * qualityDecimal));
         damage = baseDamage + Random.Range((-3 + 3 * qualityDecimal), 7 * qualityDecimal) ;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GenericPlayerWeapon : MonoBehaviour
 {
+    public string weaponType;
     public float fireRate = 1;
     public float damage;
     public float projectileSpeed;
@@ -47,5 +48,9 @@ public class GenericPlayerWeapon : MonoBehaviour
     public void StopShooting()
     {
         shooting = false;
+    }
+    public virtual void GenerateRandomWeaponStats(float qualityDecimal)
+    {
+
     }
 }
