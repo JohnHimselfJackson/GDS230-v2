@@ -2309,6 +2309,11 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1316428105}
+    - target: {fileID: 5842442646439727166, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5122887545392366793, guid: 5d9a9d7bc97a433468ef8dc84255217d,
         type: 3}
       propertyPath: m_JumpForce
@@ -2324,11 +2329,6 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: a25bf4ebe5f4b774ebe017c6e56212ce, type: 2}
-    - target: {fileID: 5842442646439727166, guid: 5d9a9d7bc97a433468ef8dc84255217d,
-        type: 3}
-      propertyPath: fireRate
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a9d7bc97a433468ef8dc84255217d, type: 3}
 --- !u!4 &1298356430 stripped

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Barrier
   - Enemy
+  - StoreUI
+  - Boss
   layers:
   - Default
   - TransparentFX

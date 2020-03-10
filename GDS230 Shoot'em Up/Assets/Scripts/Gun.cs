@@ -23,7 +23,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        GameObject bullet =  Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        bullet.GetComponent<PlayerBullet>().SetBulletValues(3, 20, 1);
     }
 
     public void StartShooting()
