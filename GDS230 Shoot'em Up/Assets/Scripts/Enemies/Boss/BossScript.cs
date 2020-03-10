@@ -34,7 +34,7 @@ public class BossScript : MonoBehaviour
     int numberOfShots = 35;
     float timeBetweenShots = 0.05f;
     float bulletSpeed = 100f;
-    Vector3 startDisplacement;
+    public Vector3 startDisplacement;
 
     float initiatingTime = 4;
     float attackWaitTime = 0;
@@ -186,7 +186,7 @@ public class BossScript : MonoBehaviour
             if (attackWaitTime < 0)
             {
                 Laser();
-                attackWaitTime = 5;
+                attackWaitTime = 3;
             }
             else
             {
@@ -268,7 +268,6 @@ public class BossScript : MonoBehaviour
 
     void MiniGun()
     {
-        startDisplacement = -gameObject.transform.right * 0.15f;
         for (int ss = 0; ss < numberOfShots; ss++)
         {
             Invoke("CreateBullet", timeBetweenShots * ss);
@@ -330,6 +329,6 @@ public class BossScript : MonoBehaviour
 
     void ToPostGameScreen()
     {
-        //SceneManager.LoadScene();
+        SceneManager.LoadScene(0);
     }
 }

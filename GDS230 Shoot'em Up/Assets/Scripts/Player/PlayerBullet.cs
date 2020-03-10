@@ -16,6 +16,10 @@ public class PlayerBullet : MonoBehaviour
         {
             gOHit.GetComponent<GenericEnemy>().DealDamage(damage);
         }
+        if (gOHit.CompareTag("Boss"))
+        {
+            gOHit.GetComponent<BossScript>().DamageBoss(damage);
+        }
         Destroy(gameObject);
     }
     public void SetBulletValues(int damageToSet, float speedToSet, float scaleMultiplyer)

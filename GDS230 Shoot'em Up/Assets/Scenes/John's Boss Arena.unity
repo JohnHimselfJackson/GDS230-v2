@@ -464,6 +464,8 @@ MonoBehaviour:
     type: 3}
   laserInstance: {fileID: 7364757445763328545, guid: 160cd0315f97f6b4983bd6a61082906a,
     type: 3}
+  startDisplacement: {x: -0.45, y: -0.1, z: 0}
+  drops: []
 --- !u!1 &1185571311
 GameObject:
   m_ObjectHideFlags: 0

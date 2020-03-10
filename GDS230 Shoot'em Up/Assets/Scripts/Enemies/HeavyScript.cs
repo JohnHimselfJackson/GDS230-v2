@@ -175,7 +175,6 @@ public class HeavyScript : GenericEnemy
             }
             else if (!movingLeft && BoxCastForBarrier(transform.position + new Vector3(0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
             {
-                print("turning to go left");
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 movingLeft = true;
@@ -184,8 +183,6 @@ public class HeavyScript : GenericEnemy
             }
             else if (!movingLeft && !GroundCastHitBarrier(rightHitGround))
             {
-
-                print("turning to go left");
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 movingLeft = true;
@@ -195,8 +192,6 @@ public class HeavyScript : GenericEnemy
             {
                 if (!GroundCastHitBarrier(rightHitGround))
                 {
-
-                    print("turning to go left");
                     // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                     movingLeft = true;
@@ -218,7 +213,6 @@ public class HeavyScript : GenericEnemy
             }
             else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
             {
-                print("turning to go right");
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 movingLeft = false;
@@ -226,7 +220,6 @@ public class HeavyScript : GenericEnemy
             }
             else if (movingLeft && !GroundCastHitBarrier(leftHitGround))
             {
-                print("turning to go right");
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 movingLeft = false;
@@ -236,7 +229,6 @@ public class HeavyScript : GenericEnemy
             {
                 if (!GroundCastHitBarrier(leftHitGround))
                 {
-                    print("turning to go right");
                     // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                     movingLeft = false;
