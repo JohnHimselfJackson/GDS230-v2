@@ -295,10 +295,10 @@ public class BossScript : MonoBehaviour
 
 
         bossLaser = Instantiate(laserInstance, laserMidPoint, Quaternion.Euler(0, 0, startingAngle));
-        bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(bossLaser.GetComponent<SpriteRenderer>().size.x , laserLength);
+        bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(0.3f , laserLength);
         bossLaser.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Tiled;
-        bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(bossLaser.GetComponent<SpriteRenderer>().size.x, laserLength);
-            bossLaser.transform.localScale = new Vector3(1, 1, 1);
+        bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(0.3f, laserLength);
+        bossLaser.transform.localScale = new Vector3(1, 1, 1);
 
 
         //shoots a raycast out for laser

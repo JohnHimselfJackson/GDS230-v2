@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 534508758407241172, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
@@ -726,6 +726,7 @@ MonoBehaviour:
     type: 3}
   laserInstance: {fileID: 7364757445763328545, guid: 160cd0315f97f6b4983bd6a61082906a,
     type: 3}
+  drops: []
 --- !u!61 &346415329
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2219,6 +2220,11 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1316428105}
+    - target: {fileID: 5133928017439778010, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5122887546648272548, guid: 5d9a9d7bc97a433468ef8dc84255217d,
         type: 3}
       propertyPath: m_RootOrder
@@ -2258,11 +2264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133928017439778010, guid: 5d9a9d7bc97a433468ef8dc84255217d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5438271807208284081, guid: 5d9a9d7bc97a433468ef8dc84255217d,
         type: 3}
@@ -3047,7 +3048,7 @@ PrefabInstance:
     - target: {fileID: 534508758407241172, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
@@ -3786,7 +3787,7 @@ PrefabInstance:
     - target: {fileID: 7436091223672849902, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7436091223672849890, guid: e9bb1c3430810414cbd32c73e28a75a9,
         type: 3}
@@ -3995,7 +3996,7 @@ PrefabInstance:
     - target: {fileID: 534508758407241172, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 534508758407241176, guid: a35d0f6253dce7340a988035ed293d22,
         type: 3}
