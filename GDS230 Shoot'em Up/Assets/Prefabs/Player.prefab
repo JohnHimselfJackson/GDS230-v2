@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5122887545392366795}
   - component: {fileID: 5122887545392366772}
   - component: {fileID: 5122887545392366793}
+  - component: {fileID: 2515765125336539445}
   - component: {fileID: 5122887545392366773}
   - component: {fileID: 5122887545392366794}
   m_Layer: 0
@@ -78,6 +79,21 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2515765125336539445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122887545392366774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632712ef241eafc4d89a91286e012ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  armour: 0
 --- !u!50 &5122887545392366773
 Rigidbody2D:
   serializedVersion: 4
@@ -349,6 +365,16 @@ PrefabInstance:
       propertyPath: muzzle
       value: 
       objectReference: {fileID: 5122887545665635759}
+    - target: {fileID: 193313784342525190, guid: bf99167292690464ebd2f94391d14391,
+        type: 3}
+      propertyPath: fireRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316677841857079530, guid: bf99167292690464ebd2f94391d14391,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 57e722babda1ece4c8c711fe7b9c6ed4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf99167292690464ebd2f94391d14391, type: 3}
 --- !u!4 &5133928017439778010 stripped
