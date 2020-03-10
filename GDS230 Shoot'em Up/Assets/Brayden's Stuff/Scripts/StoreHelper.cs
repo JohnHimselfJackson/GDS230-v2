@@ -27,6 +27,9 @@ public class StoreHelper : MonoBehaviour
     public static int isThornlieSold;
     public static int isMillerinoSold;
 
+    // A reference to our weapon integers that are sold or unsold.
+    public static int isTheBossARLooted;
+
     //A reference to our skins In-Game.
     public GameObject green;
     public GameObject red;
@@ -49,6 +52,13 @@ public class StoreHelper : MonoBehaviour
     public SpriteRenderer yellows;
     public SpriteRenderer blues;
     public SpriteRenderer blacks;
+
+    //A reference to our weapons.
+    public SpriteRenderer AR;
+    public SpriteRenderer HangGun;
+    public SpriteRenderer Sniper;
+    public SpriteRenderer Launcher;
+    public SpriteRenderer BossAR;
 
 
     void Start()
@@ -73,6 +83,9 @@ public class StoreHelper : MonoBehaviour
         isCarbonFiberSold = PlayerPrefs.GetInt("IsCarbonFiberSold");
         isThornlieSold = PlayerPrefs.GetInt("IsThornlieSold");
         isMillerinoSold = PlayerPrefs.GetInt("IsMillerinoSold");
+
+        //Gets the prefs for our weapon items.
+        isTheBossARLooted = PlayerPrefs.GetInt("IsTheBossARLooted");
 
         //Calls the Sold Check functions for each character item.
         CharacterSold();

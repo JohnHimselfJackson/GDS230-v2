@@ -10,18 +10,25 @@ public class CustomizePreferences : MonoBehaviour
     public StoreHelper storeHelper;
 
     //A reference to our 3 dropdowns for customization.
+    public Dropdown[] Dropdowns;
+
     public Dropdown charactersDropDown;
     public Dropdown skinsDropDown;
     public Dropdown weaponsDropDown;
 
     // A reference to our customize error message texts.
+    public Text[] OwnText;
     public Text ownerText;
     public Text characterOwnText;
     public Text weaponOwnText;
 
+    public Text[] WeaponStats;
+
+    public Text[] BiographyTexts;
     public Text bioText;
 
     //A reference to our 3 images that appear above the dropdowns.
+    public Image[] CustomizePictures;
     public Image skinPicture;
     public Image weaponPicture;
     public Image charPicture;
@@ -255,6 +262,17 @@ public class CustomizePreferences : MonoBehaviour
         switch (StoreHelper.o)
         {
             case 4:
+                if (StoreHelper.isBlackSold == 1)
+                {
+                    skinPicture.color = Color.black;
+                    ownerText.text = "NICE SKIN".ToString();
+                    bioText.text = "".ToString();
+                }
+                else
+                {
+                    skinPicture.color = Color.white;
+                    ownerText.text = "YOU DO NOT OWN THIS SKIN".ToString();
+                }
                 weaponPicture.color = Color.black;
                 break;
             case 3:
