@@ -6,6 +6,7 @@ public class PickUpData : MonoBehaviour
 {
     public int coinsPickedUp;
     public GenericPlayerWeapon bossWeapon;
+    public ImplantAbility implant;
 
     public void Start()
     {

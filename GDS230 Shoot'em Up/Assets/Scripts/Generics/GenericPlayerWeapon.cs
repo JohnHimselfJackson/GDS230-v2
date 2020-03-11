@@ -53,4 +53,14 @@ public class GenericPlayerWeapon : MonoBehaviour
     {
 
     }
+    
+    public void AssignFromSavedData(PlayerWeaponSaveData data)
+    {
+        weaponType = data.weaponType;
+        fireRate = data.fireRate;
+        damage = data.damage;
+        projectileSpeed = data.projectileSpeed;
+        projectileSizeMulti = data.projectileSizeMulti;
+        ammoPerShot = data.ammoPerShot;
+    }
 }

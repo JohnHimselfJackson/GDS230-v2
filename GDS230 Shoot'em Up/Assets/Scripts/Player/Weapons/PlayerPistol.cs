@@ -12,6 +12,7 @@ public class PlayerPistol : GenericPlayerWeapon
 
     public override void GenerateRandomWeaponStats(float qualityDecimal)
     {
+        weaponType = "pistol";
         fireRate = baseFireRate * (1 + Random.Range(-0.1f * (1/qualityDecimal), 2 * qualityDecimal));
         damage = baseDamage + Random.Range((-3 + 3 * qualityDecimal), 7 * qualityDecimal) ;
         projectileSpeed = baseProjectileSpeed + Random.Range((-5 + 5 * qualityDecimal), 5 * qualityDecimal);

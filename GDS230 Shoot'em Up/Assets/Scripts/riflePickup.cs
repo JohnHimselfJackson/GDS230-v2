@@ -8,7 +8,7 @@ public class riflePickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        dataHolder.bossWeapon = new PlayerRifle();
+        dataHolder.bossWeapon = new PlayerPistol();
         dataHolder.bossWeapon.GenerateRandomWeaponStats(0.6f);
         Destroy(this);
     }

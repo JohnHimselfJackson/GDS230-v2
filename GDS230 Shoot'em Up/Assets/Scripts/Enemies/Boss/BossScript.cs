@@ -221,9 +221,10 @@ public class BossScript : MonoBehaviour
     }
     void DeathStage()
     {
-        InvokeRepeating("DropLoot", 0.1f, 0.2f);
-        print("boss dead");
-        Invoke("ToPostGameScreen", 10f);
+        InvokeRepeating("DropCoin", 0.1f, 0.2f);
+        Invoke("DropWeapon", 5f);
+        Invoke("DelayCancelCoinInvoke", 10f);
+        Invoke("ToPostGameScreen", 15f);
     }
     #endregion
 
@@ -321,14 +322,25 @@ public class BossScript : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().AddForce(-bullet.transform.right * bulletSpeed);
     }
 
-    public void DropLoot()
+    public void Dropcoin()
     {
-        GameObject drop = Instantiate<GameObject>(drops[Random.Range(0, drops.Count)], transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        GameObject drop = Instantiate<GameObject>(drops[1], transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
+    }
+
+    public void DropWeapon()
+    {
+        GameObject drop = Instantiate<GameObject>(drops[Random.Range(1,3)], transform.position + Vector3.up * 0.5f, Quaternion.identity);
         drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
     }
 
     void ToPostGameScreen()
     {
         SceneManager.LoadScene(0);
+    }
+    
+    void DelayCancelCoinInvoke()
+    {
+        CancelInvoke("DropCoin");
     }
 }
