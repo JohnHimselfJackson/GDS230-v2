@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth;
     public float armour;
     public Slider healthSlider;
+    public Animator heartBeatAnim;
 
     public void Damage(float damage)
     {
@@ -47,5 +48,15 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthSlider.value = health;
+
+        if (health > 0)
+        {
+            Beat();
+        }
+    }
+
+    public void Beat()
+    {
+        heartBeatAnim.SetBool("Healthy", true);
     }
 }

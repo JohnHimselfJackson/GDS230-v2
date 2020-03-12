@@ -53,9 +53,6 @@ public class StoreHelper : MonoBehaviour
     public SpriteRenderer blues;
     public SpriteRenderer blacks;
 
-    //A reference to our weapons.
-    public SpriteRenderer AR;
-
     void Start()
     {
         //Gets our player prefs for our currency and our skins.
