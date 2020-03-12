@@ -102,6 +102,7 @@ public class ImplantAbility : MonoBehaviour
             rb.gravityScale = 0f;
 
             Instantiate(dashDes, hitpoint, Quaternion.identity);
+            Invoke("StopAbility", 0.2f);
         }
 
         float distance = Vector2.Distance(muzzle.transform.position, hitpoint);
@@ -126,5 +127,12 @@ public class ImplantAbility : MonoBehaviour
             dashing = false;
             Debug.Log("Dash ended");
         }
+    }
+
+    void StopAbility()
+    {
+        dashing = false;
+        rb.gravityScale = 3f;
+        cC.m_AirControl = true;
     }
 }
