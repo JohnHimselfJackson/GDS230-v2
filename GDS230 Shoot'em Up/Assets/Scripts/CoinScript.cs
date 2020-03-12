@@ -8,7 +8,10 @@ public class CoinScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        dataHolder.coinsPickedUp++;
-        Destroy(this, 0f);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            dataHolder.coinsPickedUp++;
+            Destroy(gameObject);
+        }
     }
 }

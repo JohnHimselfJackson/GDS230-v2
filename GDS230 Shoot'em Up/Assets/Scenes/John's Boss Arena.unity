@@ -378,7 +378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012667232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.003, y: 0.041, z: 0}
+  m_LocalPosition: {x: 3.003, y: 0.041, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2090923920}
@@ -464,8 +464,12 @@ MonoBehaviour:
     type: 3}
   laserInstance: {fileID: 7364757445763328545, guid: 160cd0315f97f6b4983bd6a61082906a,
     type: 3}
+  healthTB: {fileID: 0}
   startDisplacement: {x: -0.45, y: -0.1, z: 0}
-  drops: []
+  drops:
+  - {fileID: 8622035734738554624, guid: 69d98d14eabb4c1469facf6894b639a8, type: 3}
+  - {fileID: 6405593504025494494, guid: 4b64a73992fa96645ada7cad39dac129, type: 3}
+  - {fileID: 5224678273322877521, guid: 2e6d9c6d71aef9448821eda3593b3b6c, type: 3}
 --- !u!1 &1185571311
 GameObject:
   m_ObjectHideFlags: 0
