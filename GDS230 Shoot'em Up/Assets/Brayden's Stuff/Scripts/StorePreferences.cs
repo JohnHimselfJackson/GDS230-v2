@@ -9,7 +9,7 @@ public class StorePreferences : MonoBehaviour
     StoreHelper storeHelper;
 
     //A reference to our currency.
-    int ZELAmount;
+    public int ZELAmount;
 
     //Text for our currency.
     public Text ZELAmountText;

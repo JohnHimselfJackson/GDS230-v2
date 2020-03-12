@@ -55,11 +55,6 @@ public class StoreHelper : MonoBehaviour
 
     //A reference to our weapons.
     public SpriteRenderer AR;
-    public SpriteRenderer HangGun;
-    public SpriteRenderer Sniper;
-    public SpriteRenderer Launcher;
-    public SpriteRenderer BossAR;
-
 
     void Start()
     {
