@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BossScript : MonoBehaviour
 {
+    public PickUpData holder;
+
     float[] mortarXs = new float[10];
     public Vector3 bossAreaStart;
     public Vector3 bossAreaPlayerLimit;
@@ -20,6 +23,8 @@ public class BossScript : MonoBehaviour
     public GameObject projectile;
     public GameObject laserInstance;
 
+    public TMP_Text healthTB;
+
     float playerWidth = 0.6f;
 
 
@@ -28,7 +33,7 @@ public class BossScript : MonoBehaviour
 
     bool laserSweepStarted = false;
 
-
+    bool deathStarted = false;
 
     int shotArc = 30;
     int numberOfShots = 35;
@@ -40,7 +45,7 @@ public class BossScript : MonoBehaviour
     float attackWaitTime = 0;
     int myHealth = 1000;
     int myArmour = 1;
-    int stage = 0;
+    int stage = 5;
     public List<GameObject> drops = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -57,7 +62,7 @@ public class BossScript : MonoBehaviour
             case 0:
                 if (player.transform.position.x > bossAreaStart.x)
                 {
-                    stage = 3;
+                    stage = 1;
                 }
                 break;
             case 1:
@@ -73,9 +78,13 @@ public class BossScript : MonoBehaviour
                 StageFour();
                 break;
             case 5:
-                DeathStage();
+                if (!deathStarted)
+                {
+                    DeathStage();
+                }
                 break;
         }
+        UpdateHealthText();
     }
 
     public void DamageBoss(int damage)
@@ -91,28 +100,31 @@ public class BossScript : MonoBehaviour
         {
             myHealth -= modifiedDamage;
         }
-        if (myHealth < 0)
+        if (myHealth < 0 && stage < 5)
         {
             stage = 5;
             initiating = true;
             immune = true;
         }
-        else if(myHealth < 250)
+        else if(myHealth < 250 && stage < 4)
         {
             //add missile stage here
             stage = 5;
+            GetComponent<SpriteRenderer>().color = Color.magenta;
             initiating = true;
             immune = true;
         }
-        else if(myHealth < 500)
+        else if(myHealth < 500 && stage < 3)
         {
             stage = 3;
+            GetComponent<SpriteRenderer>().color = Color.red;
             initiating = true;
             immune = true;
         }
-        else if(myHealth < 750)
+        else if(myHealth < 750 && stage < 2)
         {
             stage = 2;
+            GetComponent<SpriteRenderer>().color = Color.yellow;
             initiating = true;
             immune = true;
         }
@@ -221,9 +233,12 @@ public class BossScript : MonoBehaviour
     }
     void DeathStage()
     {
-        InvokeRepeating("DropCoin", 0.1f, 0.2f);
+        deathStarted = true;
+        print("yeah good");
+        GetComponent<SpriteRenderer>().color = Color.blue;
+        InvokeRepeating("DropCoin", 0.2f, 0.4f);
         Invoke("DropWeapon", 5f);
-        Invoke("DelayCancelCoinInvoke", 10f);
+        Invoke("DelayCancelCoinInvoke", 8f);
         Invoke("ToPostGameScreen", 15f);
     }
     #endregion
@@ -322,25 +337,56 @@ public class BossScript : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().AddForce(-bullet.transform.right * bulletSpeed);
     }
 
-    public void Dropcoin()
+    public void DropCoin()
     {
-        GameObject drop = Instantiate<GameObject>(drops[1], transform.position + Vector3.up * 0.5f, Quaternion.identity);
-        drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
+        GameObject drop = Instantiate<GameObject>(drops[0], transform.position + (Vector3.up * 0.5f) -(Vector3.forward * 3f), Quaternion.identity);
+        drop.GetComponent<CoinScript>().dataHolder = holder;
+        drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 4f, ForceMode2D.Impulse);
     }
 
     public void DropWeapon()
     {
-        GameObject drop = Instantiate<GameObject>(drops[Random.Range(1,3)], transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        GameObject drop = Instantiate<GameObject>(drops[Random.Range(1,3)], transform.position + (Vector3.up * 0.5f) - (Vector3.forward * 3f), Quaternion.identity);
+        drop.GetComponent<GenericWeaponPickup>().dataHolder = holder;
         drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
     }
 
     void ToPostGameScreen()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
     
     void DelayCancelCoinInvoke()
     {
         CancelInvoke("DropCoin");
+    }
+
+
+    void UpdateHealthText()
+    {
+        switch (stage)
+        {
+            case 0:
+                healthTB.text = null;
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                healthTB.text = myHealth.ToString() + "/ 1000";
+                if (immune)
+                {
+                    healthTB.color = Color.blue;
+                }
+                else
+                {
+                    healthTB.color = Color.white;
+                }
+                break;
+            case 5:
+                healthTB.text = "0 / 1000";
+                healthTB.color = Color.red;
+                break;
+        }
     }
 }

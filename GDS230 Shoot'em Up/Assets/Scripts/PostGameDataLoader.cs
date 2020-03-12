@@ -6,13 +6,17 @@ using TMPro;
 
 public class PostGameDataLoader : MonoBehaviour
 {
-    PickUpData gameData;
+    public WeaponHighlightedManager manager;
+    public PickUpData gameData;
     public TMP_Text ZelTB;
     public Image ZelImage;
-    public TMP_Text WeaponNameTB;
-    public Image WeaponImage;
+    public TMP_Text weaponNameTB;
+    public Button weaponButton;
     public TMP_Text ImplantNameTB;
     public Image ImplantImage;
+
+    public Sprite pistolImage;
+    public Sprite rifleImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,16 +34,29 @@ public class PostGameDataLoader : MonoBehaviour
 
         if (gameData.bossWeapon == null)
         {
-            WeaponNameTB.text = null;
-            WeaponImage.gameObject.SetActive(false);
+            weaponNameTB.text = null;
+            weaponButton.gameObject.SetActive(false);
         }
         else
         {
-            WeaponNameTB.text = gameData.bossWeapon.weaponType;
-            WeaponImage.gameObject.SetActive(true);
+            weaponNameTB.text = gameData.bossWeapon.weaponType;
+            weaponButton.gameObject.SetActive(true);
+            switch (gameData.bossWeapon.weaponType)
+            {
+                case "pistol":
+                    weaponButton.gameObject.GetComponent<Image>().sprite = pistolImage;
+                    break;
+                case "rifle":
+                    weaponButton.gameObject.GetComponent<Image>().sprite = rifleImage;
+                    break;
+                    defualt:
+                    Debug.Log("weapon type is null despite the srcipt existing");
+                    break;
+
+            }
         }
 
-        if (gameData.bossWeapon == null)
+        if (false)
         {
             ImplantNameTB.text = null;
             ImplantImage.gameObject.SetActive(false);
@@ -49,6 +66,11 @@ public class PostGameDataLoader : MonoBehaviour
             ImplantNameTB.text = "has implant";
             ImplantImage.gameObject.SetActive(true);
         }
+    }
+
+    public void WeaponPressed()
+    {
+        manager.ShowSelectedWeapon(gameData.bossWeapon);
     }
 
 

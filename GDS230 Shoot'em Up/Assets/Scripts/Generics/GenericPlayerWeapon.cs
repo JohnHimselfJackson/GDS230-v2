@@ -16,8 +16,7 @@ public class GenericPlayerWeapon : MonoBehaviour
 
     bool shooting = false;
     float timeToFire = 0;
-
-
+       
     // Update is called once per frame
     void Update()
     {
