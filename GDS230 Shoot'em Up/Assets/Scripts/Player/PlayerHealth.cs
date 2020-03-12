@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float health;
     public float maxHealth;
     public float armour;
+    public Slider healthSlider;
 
     public void Damage(float damage)
     {
@@ -40,5 +42,10 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    void Update()
+    {
+        healthSlider.value = health;
     }
 }

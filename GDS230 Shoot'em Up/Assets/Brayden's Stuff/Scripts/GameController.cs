@@ -1,18 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public states myState;
     public GameObject pausePanel;
+    public Transform myButton;
+
+    UIBehaviour myBehaviour;
 
     public enum states
     {
         Paused,
         Unpaused
     }
+
+    void Start()
+    {
+        myBehaviour = GetComponent<UIBehaviour>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -53,11 +63,16 @@ public class GameController : MonoBehaviour
     {
         GameIsPaused = true;
         myState = states.Paused;
+        Time.timeScale = 0f;
+        pausePanel.SetActive(true);
     }
 
     public void Resume()
     {
         GameIsPaused = false;
         myState = states.Unpaused;
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
+        myBehaviour.Smally(myButton);
     }
 }
