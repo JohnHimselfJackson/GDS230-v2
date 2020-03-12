@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 26621091}
   m_Layer: 8
   m_Name: Wall (5)
-  m_TagString: Barrier
+  m_TagString: Breakable Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46202488
 GameObject:
@@ -314,6 +314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Barrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -678,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &346415328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +710,7 @@ MonoBehaviour:
     type: 3}
   laserInstance: {fileID: 7364757445763328545, guid: 160cd0315f97f6b4983bd6a61082906a,
     type: 3}
+  startDisplacement: {x: 0, y: 0, z: 0}
   drops: []
 --- !u!61 &346415329
 BoxCollider2D:
@@ -842,7 +848,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -977,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1098,7 +1104,7 @@ GameObject:
   - component: {fileID: 528192268}
   - component: {fileID: 528192267}
   - component: {fileID: 528192266}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Wall (3)
   m_TagString: Barrier
   m_Icon: {fileID: 0}
@@ -1194,6 +1200,12 @@ Transform:
   m_Father: {fileID: 2035032448}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &552960257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5122887545665635752, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298356429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563198338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1219,7 @@ GameObject:
   - component: {fileID: 563198339}
   m_Layer: 8
   m_Name: Wall (4)
-  m_TagString: Barrier
+  m_TagString: Breakable Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1299,7 +1311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 23
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565808071
 GameObject:
@@ -1398,7 +1410,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1528,7 +1540,12 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1658,7 +1675,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1788,7 +1805,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -1913,7 +1930,12 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2129,6 +2151,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Barrier
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2324,11 +2351,62 @@ PrefabInstance:
       propertyPath: m_AirControl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5122887545392366793, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_WhatIsGround.m_Bits
+      value: 2304
+      objectReference: {fileID: 0}
     - target: {fileID: 5122887545392366794, guid: 5d9a9d7bc97a433468ef8dc84255217d,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: a25bf4ebe5f4b774ebe017c6e56212ce, type: 2}
+    - target: {fileID: 5122887545665635759, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122887545392366773, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1841672308}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: breakable.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: muzzle
+      value: 
+      objectReference: {fileID: 552960257}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: unbreakable.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077186057011149508, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+        type: 3}
+      propertyPath: dashDes
+      value: 
+      objectReference: {fileID: 8622035734738554624, guid: 69d98d14eabb4c1469facf6894b639a8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9a9d7bc97a433468ef8dc84255217d, type: 3}
 --- !u!4 &1298356430 stripped
@@ -2494,7 +2572,12 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2624,7 +2707,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2867,7 +2950,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -2907,7 +2990,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3086,7 +3169,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3216,7 +3299,12 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3226,7 +3314,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3326,136 +3414,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1681621012}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1698244389
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2035032448}
-    m_Modifications:
-    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_TagString
-      value: Barrier
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_DrawMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400297, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.drawMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4784367756747400298, guid: 175777163f386ce459626a0ee3102a52,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 175777163f386ce459626a0ee3102a52, type: 3}
---- !u!4 &1698244390 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
-    type: 3}
-  m_PrefabInstance: {fileID: 1698244389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1713650357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3476,7 +3434,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3516,7 +3474,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -3822,6 +3780,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Barrier
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4043,6 +4006,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Barrier
       objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4151,6 +4119,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1755184823}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1841672308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5122887545392366774, guid: 5d9a9d7bc97a433468ef8dc84255217d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1298356429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1852240904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4171,7 +4145,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -4306,7 +4280,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -4436,7 +4410,12 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -4654,7 +4633,7 @@ GameObject:
   - component: {fileID: 2009111366}
   m_Layer: 8
   m_Name: Wall (7)
-  m_TagString: Barrier
+  m_TagString: Breakable Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4746,7 +4725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2017530427
 PrefabInstance:
@@ -4768,7 +4747,7 @@ PrefabInstance:
     - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
       propertyPath: m_TagString
-      value: Barrier
+      value: Breakable Wall
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -4909,7 +4888,7 @@ Transform:
   - {fileID: 1391478377}
   - {fileID: 528192268}
   - {fileID: 677180987}
-  - {fileID: 1698244390}
+  - {fileID: 563198341}
   - {fileID: 942230851}
   - {fileID: 1681621013}
   - {fileID: 1411774745}
@@ -4928,7 +4907,6 @@ Transform:
   - {fileID: 582901845}
   - {fileID: 1917794764}
   - {fileID: 2017530428}
-  - {fileID: 563198341}
   - {fileID: 26621093}
   - {fileID: 2145549602}
   - {fileID: 2009111368}
@@ -4958,6 +4936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Barrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784367756747400299, guid: 175777163f386ce459626a0ee3102a52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4784367756747400296, guid: 175777163f386ce459626a0ee3102a52,
         type: 3}
@@ -5080,7 +5063,7 @@ GameObject:
   - component: {fileID: 2145549600}
   m_Layer: 8
   m_Name: Wall (6)
-  m_TagString: Barrier
+  m_TagString: Breakable Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5172,7 +5155,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2035032448}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6077972948877778469
 PrefabInstance:
