@@ -46,7 +46,7 @@ public class ImplantAbility : MonoBehaviour
         {
             case (Implant.BioticDash):
                 BioticDash();
-                Debug.Log("BioticDash");
+                //Debug.Log("BioticDash");
                 break;
         }
     }

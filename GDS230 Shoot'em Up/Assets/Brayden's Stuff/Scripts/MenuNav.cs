@@ -38,6 +38,10 @@ public class MenuNav : MonoBehaviour
 
     public void Credits()
     {
-        SceneManager.LoadScene(5, LoadSceneMode.Single);
+        SceneManager.LoadScene(7, LoadSceneMode.Single);
+    }
+    public void Inventory()
+    {
+        SceneManager.LoadScene(6, LoadSceneMode.Single);
     }
 }

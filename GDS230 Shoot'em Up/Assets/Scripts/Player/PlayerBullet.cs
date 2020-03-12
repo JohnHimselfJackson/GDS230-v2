@@ -9,7 +9,7 @@ public class PlayerBullet : MonoBehaviour
     public Rigidbody2D rb;
     public int damage;
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnCollisionEnter2D(Collision2D hitInfo)
     {
         GameObject gOHit = hitInfo.gameObject;
         if (gOHit.CompareTag("Enemy"))

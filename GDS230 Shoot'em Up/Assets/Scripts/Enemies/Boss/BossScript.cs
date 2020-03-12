@@ -45,7 +45,7 @@ public class BossScript : MonoBehaviour
     float attackWaitTime = 0;
     int myHealth = 1000;
     int myArmour = 1;
-    int stage = 5;
+    int stage = 0;
     public List<GameObject> drops = new List<GameObject>();
 
     // Start is called before the first frame update

@@ -14,17 +14,17 @@ public class GenericPlayerWeapon : MonoBehaviour
 
     public Transform firePosition;
 
-    bool shooting = false;
     float timeToFire = 0;
-       
+
     // Update is called once per frame
-    void Update()
+    public void CallToShoot()
     {
         //Fire rate
-        if (shooting &&  timeToFire> 0)
+        if (timeToFire < 0)
         {
-            timeToFire = Time.time + (1 / fireRate);
+            timeToFire = (1 / fireRate);
             Shoot();
+            print("test 1");
         }
         else
         {
@@ -34,19 +34,10 @@ public class GenericPlayerWeapon : MonoBehaviour
 
     void Shoot()
     {
+        print("test 2");
         GameObject newProjectile = Instantiate(projectile, firePosition.position, firePosition.rotation);
         newProjectile.GetComponent<PlayerBullet>().SetBulletValues((int)damage, projectileSpeed, projectileSizeMulti);
         //Player.Ammo - ammoPerShot;
-    }
-
-    public void StartShooting()
-    {
-        shooting = true;
-    }
-
-    public void StopShooting()
-    {
-        shooting = false;
     }
     public virtual void GenerateRandomWeaponStats(float qualityDecimal)
     {

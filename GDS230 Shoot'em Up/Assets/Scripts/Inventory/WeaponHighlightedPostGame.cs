@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class WeaponHighlightedManager : MonoBehaviour
+public class WeaponHighlightedPostGame : SelectionManagerLink
 {
+    public int weaponSelected; // -1 is none, 0-15 is buttons, 16 is boss
     public InventoryController iC;
     public PostGameDataLoader pgdl;
 
@@ -29,8 +30,9 @@ public class WeaponHighlightedManager : MonoBehaviour
         
     }
 
-    public void ShowSelectedWeapon(int weaponReference)
+    public override void ShowSelectedWeapon(int weaponReference)
     {
+        weaponSelected = weaponReference;
         gameObject.SetActive(true);
         switch (iC.playerWeapons[weaponReference].weaponType)
         {
@@ -51,12 +53,22 @@ public class WeaponHighlightedManager : MonoBehaviour
                              "Projectile Size = " + iC.playerWeapons[weaponReference].projectileSizeMulti + "\n" +
                              "Ammo Per Shot = " + iC.playerWeapons[weaponReference].ammoPerShot;
         keepBtn.gameObject.SetActive(false);
+        if (iC.FindNumberOfWeapons() > 1)
+        {
+            print("test");
+            discardBtn.interactable = true;
+        }
+        else
+        {
+            discardBtn.interactable = false;
+        }
         discardBtn.gameObject.SetActive(true);
         discardBtn.gameObject.GetComponentInChildren<TMP_Text>().text = "Discard";
 
     }
-    public void ShowSelectedWeapon(GenericPlayerWeapon playerweapon)
+    public override void ShowSelectedWeapon(GenericPlayerWeapon playerweapon)
     {
+        weaponSelected = 16;
         gameObject.SetActive(true);
         print("yeah good");
         switch (playerweapon.weaponType)
@@ -77,6 +89,7 @@ public class WeaponHighlightedManager : MonoBehaviour
                              "Projecticle Speed = " + playerweapon.projectileSpeed + "\n" +
                              "Projectile Size = " + playerweapon.projectileSizeMulti + "\n" +
                              "Ammo Per Shot = " + playerweapon.ammoPerShot;
+        print(iC.FindNumberOfWeapons());
         if (iC.FindNumberOfWeapons() < 16)
         {
             keepBtn.interactable = true;
@@ -87,28 +100,30 @@ public class WeaponHighlightedManager : MonoBehaviour
         }
         keepBtn.gameObject.GetComponentInChildren<TMP_Text>().text = "Keep";
         keepBtn.gameObject.SetActive(true);
-        if(iC.FindNumberOfWeapons() > 2)
+        if(iC.FindNumberOfWeapons() > 1)
         {
-            keepBtn.interactable = true;
+            print("test");
+            discardBtn.interactable = true;
         }
         else
         {
-            keepBtn.interactable = false;
+            discardBtn.interactable = false;
         }
         discardBtn.gameObject.SetActive(true);
         discardBtn.gameObject.GetComponentInChildren<TMP_Text>().text = "Discard";
     }
 
-    public void KeepButtonPress()
+    public override void KeepButtonPress()
     {
         int nullWeaponReference;
         if (iC.FindNumberOfWeapons() < 16)
         {
             nullWeaponReference = iC.FindNextNullWeapon();
-            print(nullWeaponReference);
+            print("weapon null reference " + nullWeaponReference);
             print(iC.playerWeapons[nullWeaponReference]);
             print(pgdl.gameData.bossWeapon);
             //print(new PlayerWeaponSaveData(pgdl.gameData.bossWeapon));
+
             iC.playerWeapons[nullWeaponReference] = new PlayerWeaponSaveData(pgdl.gameData.bossWeapon);
             iC.AssignButtons();
             keepBtn.gameObject.SetActive(false);
@@ -116,24 +131,29 @@ public class WeaponHighlightedManager : MonoBehaviour
             pgdl.weaponButton.gameObject.SetActive(false);
         }
         gameObject.SetActive(false);
+        weaponSelected = -1;
     }
-    public void DiscardButtonPress()
+    public override void DiscardButtonPress()
     {
-        int nullWeaponReference;
-        if (iC.FindNumberOfWeapons() < 16)
+        if(weaponSelected == 16)
         {
-            nullWeaponReference = iC.FindNextNullWeapon();
-            print(nullWeaponReference);
-            print(iC.playerWeapons[nullWeaponReference]);
-            print(pgdl.gameData.bossWeapon);
-            //print(new PlayerWeaponSaveData(pgdl.gameData.bossWeapon));
-            iC.playerWeapons[nullWeaponReference] = new PlayerWeaponSaveData(pgdl.gameData.bossWeapon);
-            iC.AssignButtons();
-            keepBtn.gameObject.SetActive(false);
+            pgdl.gameData.bossWeapon = null;
+            if (pgdl.gameData.GetComponent<GenericPlayerWeapon>() != null)
+            {
+                Destroy(pgdl.gameData.GetComponent<GenericPlayerWeapon>());
+            }
             pgdl.weaponNameTB.text = null;
             pgdl.weaponButton.gameObject.SetActive(false);
         }
+        else if(weaponSelected < 16 && weaponSelected > -1)
+        {
+            iC.playerWeapons[weaponSelected] = null;
+        }
+        iC.AssignButtons();
+        gameObject.SetActive(false);
+        weaponSelected = -1;
     }
+
 
 
 

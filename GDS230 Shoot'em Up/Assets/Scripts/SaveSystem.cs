@@ -19,19 +19,38 @@ public static class SaveSystem
 
         formatter.Serialize(stream, weaponData);
 
-        stream.Close();       
+        stream.Close();
+    }
+    public static void SaveWeaponData(PlayerWeaponSaveData[] playerWeapons)
+    {
+        PlayerWeaponSaveData[] weaponData = new PlayerWeaponSaveData[16];
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/playerSaveData.WeaponData";
+        Debug.Log(path);
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        for (int ww = 0; ww < 16; ww++)
+        {
+            weaponData[ww] = playerWeapons[ww];
+        }
+
+        formatter.Serialize(stream, weaponData);
+
+        stream.Close();
     }
 
     public static PlayerWeaponSaveData[] LoadWeaponData()
     {
 
-        string path = Application.persistentDataPath + "/player.SaveData";
+        string path = Application.persistentDataPath + "/playerSaveData.WeaponData";
         if (File.Exists(path))
         {
-
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
-            return formatter.Deserialize(stream) as PlayerWeaponSaveData[];
+            PlayerWeaponSaveData[] temp = formatter.Deserialize(stream) as PlayerWeaponSaveData[];
+            stream.Close();
+            return temp;
         }
         else
         {

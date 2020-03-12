@@ -6,7 +6,7 @@ using TMPro;
 
 public class PostGameDataLoader : MonoBehaviour
 {
-    public WeaponHighlightedManager manager;
+    public WeaponHighlightedPostGame manager;
     public PickUpData gameData;
     public TMP_Text ZelTB;
     public Image ZelImage;

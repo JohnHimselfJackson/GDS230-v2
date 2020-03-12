@@ -90,8 +90,8 @@ public class StoreHelper : MonoBehaviour
     {
         //Sets our currency to a text.
         ZELText.text = "ZEL: " + ZELAmount.ToString();
-        Debug.Log(e);
-        Debug.Log("The current selection has a value of " + isMillerinoSold);
+        //Debug.Log(e);
+        //Debug.Log("The current selection has a value of " + isMillerinoSold);
     }
 
     public void SaveMoney()

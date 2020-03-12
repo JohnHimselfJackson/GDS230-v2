@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8dad295717b9f4aae4d8d02b2a6fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSelected: 0
   iC: {fileID: 1201601788}
   pgdl: {fileID: 1746661213}
   weaponImage: {fileID: 1941452936}
@@ -2129,7 +2130,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 734464316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 16273452}
+        m_MethodName: DiscardButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &734464316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2537,6 +2549,7 @@ GameObject:
   - component: {fileID: 903079286}
   - component: {fileID: 903079285}
   - component: {fileID: 903079284}
+  - component: {fileID: 903079287}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -2606,7 +2619,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 903079285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 903079287}
+        m_MethodName: LeavePostGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &903079285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2643,6 +2667,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903079282}
   m_CullTransparentMesh: 0
+--- !u!114 &903079287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903079282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb78e6727ea5b114d81d4c50f89224e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iC: {fileID: 1201601788}
 --- !u!1 &919445949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,7 +3217,7 @@ GameObject:
   - component: {fileID: 1201601789}
   - component: {fileID: 1201601788}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4451,7 +4488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 16273452}
-  gameData: {fileID: 0}
+  gameData: {fileID: 845011046}
   ZelTB: {fileID: 1217500704}
   ZelImage: {fileID: 1689140307}
   weaponNameTB: {fileID: 171436215}
