@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Brayden's Stuff/Scenes/Brayden's TestScenes/Store.unity
     guid: 42a2550f71d5f1f4b9b8d3bb9f6bc346
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GreyBoxExample.unity
     guid: ba72c40fee99b2544bdd63fd35e7c418
   - enabled: 0
     path: Assets/Brayden's Stuff/Scenes/Brayden's TestScenes/Credits.unity
     guid: d8967d4e95cb60f4ba854549b8f3f3f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterContollerTest.unity
     guid: f1eaab34fdc3d6a468e02472eb8cb7b6
   m_configObjects: {}
