@@ -16,11 +16,6 @@ public class GenericPlayerWeapon : MonoBehaviour
 
     float timeToFire = 0;
 
-    void Awake()
-    {
-        firePosition = GameObject.Find("Muzzle").transform;
-    }
-
     // Update is called once per frame
     public void CallToShoot()
     {
