@@ -20,8 +20,10 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	[Header("Events")]
-	[Space]
+    [Header("Events")]
+    [Space]
+
+    private ImplantAbility implant;
 
 	public UnityEvent OnLandEvent;
 
@@ -33,6 +35,8 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+        implant = GetComponent<ImplantAbility>();
+
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
@@ -52,7 +56,7 @@ public class CharacterController2D : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-            
+            implant.refreshImplant = true;
 
 			if (colliders[i].gameObject != gameObject)
 			{

@@ -11,10 +11,12 @@ public class ImplantAbility : MonoBehaviour
 
     public GameObject muzzle;
 
-    public GameObject dashDes;
+    //public GameObject dashDes;
     public bool dashing;
     public float speed;
     public float range;
+    private bool bDash;
+    public bool refreshImplant;
     private Vector2 dashEnd, hitpoint;
     public LayerMask breakable;
     public LayerMask unbreakable;
@@ -45,17 +47,17 @@ public class ImplantAbility : MonoBehaviour
         switch (implant)
         {
             case (Implant.BioticDash):
-                BioticDash();
+                bDash = true;
                 //Debug.Log("BioticDash");
                 break;
         }
     }
 
     #region Biotic Dash
-    void BioticDash()
+    public void BioticDash()
     {
         RaycastHit2D hit;
-        if (Input.GetButtonDown("Jump"))
+        if (bDash && refreshImplant == true)
         {
             dashing = true;
             dashEnd = muzzle.transform.right;
@@ -100,8 +102,9 @@ public class ImplantAbility : MonoBehaviour
             Debug.Log("Dash started");
             cC.m_AirControl = false;
             rb.gravityScale = 0f;
+            refreshImplant = false;
 
-            Instantiate(dashDes, hitpoint, Quaternion.identity);
+            //Instantiate(dashDes, hitpoint, Quaternion.identity);
             Invoke("StopAbility", 0.2f);
         }
 
@@ -122,7 +125,7 @@ public class ImplantAbility : MonoBehaviour
         {
             rb.gravityScale = 3f;
             cC.m_AirControl = true;
-            Destroy(dashDes);
+            //Destroy(dashDes);
             //Stop dashing
             dashing = false;
             Debug.Log("Dash ended");
