@@ -109,7 +109,7 @@ public class ImplantAbility : MonoBehaviour
         }
 
         float distance = Vector2.Distance(muzzle.transform.position, hitpoint);
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         float threshold;
         if (cC.m_Grounded)
