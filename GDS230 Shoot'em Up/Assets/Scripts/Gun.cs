@@ -14,16 +14,28 @@ public class Gun : MonoBehaviour
     {
         weaponReference = gameObject.AddComponent<GenericPlayerWeapon>();
         PlayerWeaponSaveData[] playerWeapons = SaveSystem.LoadWeaponData();
-
-        if(PlayerPrefs.GetInt("selectedWeapon",-1) != -1)
+        if(playerWeapons == null)
         {
-            int weaponNumber = PlayerPrefs.GetInt("selectedWeapon");
-   
-            if(playerWeapons[weaponNumber] != null)
+            Destroy(gameObject.GetComponent<GenericPlayerWeapon>());
+            weaponReference = gameObject.AddComponent<PlayerPistol>();
+            weaponReference.GenerateRandomWeaponStats(0.5f);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("selectedWeapon", -1) != -1)
             {
-                if (playerWeapons[weaponNumber].fireRate == 0)
+                int weaponNumber = PlayerPrefs.GetInt("selectedWeapon");
+
+                if (playerWeapons[weaponNumber] != null)
                 {
-                    weaponReference.AssignFromSavedData(playerWeapons[weaponNumber]);
+                    if (playerWeapons[weaponNumber].fireRate == 0)
+                    {
+                        weaponReference.AssignFromSavedData(playerWeapons[weaponNumber]);
+                    }
+                    else
+                    {
+                        AssignFirstWeapon();
+                    }
                 }
                 else
                 {
@@ -34,19 +46,14 @@ public class Gun : MonoBehaviour
             {
                 AssignFirstWeapon();
             }
+            if (weaponReference.fireRate == 0)
+            {
+                Destroy(gameObject.GetComponent<GenericPlayerWeapon>());
+                weaponReference = gameObject.AddComponent<PlayerPistol>();
+                weaponReference.GenerateRandomWeaponStats(0.5f);
+            }
         }
-        else
-        {
-            AssignFirstWeapon();
-        }
-        if(weaponReference.fireRate == 0)
-        {
-            Destroy(gameObject.GetComponent<GenericPlayerWeapon>());
-            weaponReference = gameObject.AddComponent<PlayerPistol>();
-            weaponReference.GenerateRandomWeaponStats(0.5f);
-        }
-
-        if(weaponReference.weaponType == "pistol" || weaponReference.weaponType == "rifle")
+        if (weaponReference.weaponType == "pistol" || weaponReference.weaponType == "rifle")
         {
             weaponReference.projectile = bulletPrefab;
         }
@@ -78,17 +85,23 @@ public class Gun : MonoBehaviour
     void AssignFirstWeapon()
     {
         PlayerWeaponSaveData[] playerWeapons = SaveSystem.LoadWeaponData();
-        for (int ww = 0; ww < 16; ww++)
+        print(playerWeapons);
+        if(playerWeapons == null)
         {
-            if (playerWeapons[ww] != null)
+        }
+        else
+        {
+            for (int ww = 0; ww < 16; ww++)
             {
-                if (playerWeapons[ww].fireRate != 0)
+                if (playerWeapons[ww] != null)
                 {
-                    weaponReference.AssignFromSavedData(playerWeapons[ww]);
+                    if (playerWeapons[ww].fireRate != 0)
+                    {
+                        weaponReference.AssignFromSavedData(playerWeapons[ww]);
+                    }
                 }
             }
-        }
-
+        }    
     }
 
 
