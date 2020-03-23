@@ -1194,10 +1194,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 32
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1295,10 +1295,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6920327312696060460, guid: ba5be1ece2e34294c8803ce6fae6af76,
+    - target: {fileID: 437350983136171181, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
-      propertyPath: m_Name
-      value: CustomizeCanvas
+      propertyPath: m_AnchoredPosition.x
+      value: -96
+      objectReference: {fileID: 0}
+    - target: {fileID: 437350983136171181, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -324
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283736855567863721, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_Text
+      value: Normal Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461844494572411331, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461844495178392157, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660693585885796987, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -71.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660693585885796987, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 488.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660693585885796987, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 142.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660693586416624242, guid: ba5be1ece2e34294c8803ce6fae6af76,
+        type: 3}
+      propertyPath: m_Text
+      value: BIOGRAPHY
       objectReference: {fileID: 0}
     - target: {fileID: 4846787379240301770, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
@@ -1405,40 +1445,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2461844494572411331, guid: ba5be1ece2e34294c8803ce6fae6af76,
+    - target: {fileID: 6920327312696060460, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461844495178392157, guid: ba5be1ece2e34294c8803ce6fae6af76,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Name
+      value: CustomizeCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7457813805177866489, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
       propertyPath: bioText
       value: 
       objectReference: {fileID: 2026348641}
-    - target: {fileID: 3660693585885796987, guid: ba5be1ece2e34294c8803ce6fae6af76,
+    - target: {fileID: 7457813806174016582, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -71.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660693585885796987, guid: ba5be1ece2e34294c8803ce6fae6af76,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 488.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660693585885796987, guid: ba5be1ece2e34294c8803ce6fae6af76,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 142.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660693586416624242, guid: ba5be1ece2e34294c8803ce6fae6af76,
-        type: 3}
-      propertyPath: m_Text
-      value: BIOGRAPHY
+      propertyPath: m_AnchoredPosition.x
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7457813806623886372, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
@@ -1449,11 +1469,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 116.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7457813806174016582, guid: ba5be1ece2e34294c8803ce6fae6af76,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 9041754604426499689, guid: ba5be1ece2e34294c8803ce6fae6af76,
         type: 3}
@@ -1479,11 +1494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Options.m_Options.Array.data[4].m_Text
       value: Boss' Rifle
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283736855567863721, guid: ba5be1ece2e34294c8803ce6fae6af76,
-        type: 3}
-      propertyPath: m_Text
-      value: Normal Rifle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5be1ece2e34294c8803ce6fae6af76, type: 3}

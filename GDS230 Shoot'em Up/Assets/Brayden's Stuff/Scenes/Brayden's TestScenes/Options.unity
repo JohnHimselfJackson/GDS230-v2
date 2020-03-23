@@ -276,10 +276,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2715991861513625718, guid: de217b303d021294098e466fd2b81be5,
+    - target: {fileID: 2715991861024744466, guid: de217b303d021294098e466fd2b81be5,
         type: 3}
-      propertyPath: m_Name
-      value: SettingsCanvas
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715991861024744466, guid: de217b303d021294098e466fd2b81be5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715991861024744466, guid: de217b303d021294098e466fd2b81be5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715991861052393628, guid: de217b303d021294098e466fd2b81be5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715991861052393628, guid: de217b303d021294098e466fd2b81be5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2715991861513625714, guid: de217b303d021294098e466fd2b81be5,
         type: 3}
@@ -401,6 +421,16 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 720
       objectReference: {fileID: 0}
+    - target: {fileID: 2715991861513625718, guid: de217b303d021294098e466fd2b81be5,
+        type: 3}
+      propertyPath: m_Name
+      value: SettingsCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715991862085828333, guid: de217b303d021294098e466fd2b81be5,
+        type: 3}
+      propertyPath: m_Text
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: 4962850752661106807, guid: de217b303d021294098e466fd2b81be5,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -410,31 +440,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2715991861024744466, guid: de217b303d021294098e466fd2b81be5,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2715991861024744466, guid: de217b303d021294098e466fd2b81be5,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2715991861024744466, guid: de217b303d021294098e466fd2b81be5,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2715991861052393628, guid: de217b303d021294098e466fd2b81be5,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2715991861052393628, guid: de217b303d021294098e466fd2b81be5,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de217b303d021294098e466fd2b81be5, type: 3}
