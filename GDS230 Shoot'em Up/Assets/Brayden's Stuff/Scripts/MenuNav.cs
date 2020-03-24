@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuNav : MonoBehaviour
 {
+    public Animator transition;
+
+    public float transitionTime = 1f;
+
     public void Quit()
     {
         Application.Quit();
@@ -16,32 +20,53 @@ public class MenuNav : MonoBehaviour
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 
-    public void Options()
+    public void LoadNextLevel()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    public void Customize()
+    public void LoadPreviousLevel()
     {
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex - 1));
     }
 
-    public void Shop()
+    public void LoadPlayLevel()
     {
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex + 4));
     }
 
-    public void Game()
+    public void LoadInventory()
     {
-        SceneManager.LoadScene(4, LoadSceneMode.Single);
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex + 7));
     }
 
-    public void Credits()
+    public void BackCredits()
     {
-        SceneManager.LoadScene(5, LoadSceneMode.Single);
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex - 4));
     }
-    public void Inventory()
+
+    public void LoadCredits()
     {
-        SceneManager.LoadScene(7, LoadSceneMode.Single);
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex + 4));
     }
+
+    public void LoadMenu()
+    {
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex));
+    }
+
+    public void LoadStore()
+    {
+        StartCoroutine(LoadingScene(SceneManager.GetActiveScene().buildIndex + 3));
+    }
+
+    IEnumerator LoadingScene(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
+    }
+
 }

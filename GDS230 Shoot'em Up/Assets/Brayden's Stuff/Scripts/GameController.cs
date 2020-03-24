@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour
         myState = states.Paused;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
+        //myBehaviour.Normalize(myButton);
     }
 
     public void Resume()
@@ -73,6 +74,6 @@ public class GameController : MonoBehaviour
         myState = states.Unpaused;
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
-        myBehaviour.Smally(myButton);
+        //myBehaviour.Normalize(myButton);
     }
 }
