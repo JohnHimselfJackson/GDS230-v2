@@ -6,11 +6,13 @@ public class ImplantAbility : MonoBehaviour
 {
     private CharacterController2D cC;
     public Rigidbody2D rb;
-    public enum Implant { BioticDash };
+    public enum Implant { BioticDash, Shield };
     public Implant implant;
 
     public GameObject muzzle;
 
+    #region Biotic Dash Variables
+    [HideInInspector]
     //public GameObject dashDes;
     public bool dashing;
     public float speed;
@@ -20,6 +22,14 @@ public class ImplantAbility : MonoBehaviour
     private Vector2 dashEnd, hitpoint;
     public LayerMask breakable;
     public LayerMask unbreakable;
+    #endregion
+
+    #region Shield Variables
+    public GameObject shieldObj;
+    public bool shieldActive;
+    private float maxShieldHealth;
+    private float curShieldHealth;
+    #endregion
 
     void Awake()
     {
@@ -29,7 +39,12 @@ public class ImplantAbility : MonoBehaviour
 
     void Start()
     {
-        implant = Implant.BioticDash;
+        #region Shield Start Conditions
+        shieldObj.SetActive(false);
+        curShieldHealth = maxShieldHealth;
+        #endregion
+
+        //implant = Implant.BioticDash;
     }
 
     void Update()
@@ -49,6 +64,10 @@ public class ImplantAbility : MonoBehaviour
             case (Implant.BioticDash):
                 bDash = true;
                 //Debug.Log("BioticDash");
+                break;
+
+            case (Implant.Shield):
+                shieldActive = true;
                 break;
         }
     }
@@ -79,17 +98,9 @@ public class ImplantAbility : MonoBehaviour
                 Debug.Log("Did not hit unbreakable");
             }
         }
-    }
-    #endregion
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log(other.gameObject.name);
-
-        if (other.gameObject.tag == "Breakable Wall" && dashing == true)
+        else
         {
-            Destroy(other.gameObject);
-            Debug.Log("Kapow!");
+            return;
         }
     }
 
@@ -129,6 +140,33 @@ public class ImplantAbility : MonoBehaviour
             //Stop dashing
             dashing = false;
             Debug.Log("Dash ended");
+        }
+    }
+    #endregion
+
+    #region Shield
+    void Shield()
+    {
+        if (shieldActive)
+        {
+            shieldObj.SetActive(true);
+        }
+    }
+
+    void DamageShield(float shieldDamage)
+    {
+        curShieldHealth = curShieldHealth - shieldDamage;
+    }
+    #endregion
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log(other.gameObject.name);
+
+        if (other.gameObject.tag == "Breakable Wall" && dashing == true)
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Kapow!");
         }
     }
 
