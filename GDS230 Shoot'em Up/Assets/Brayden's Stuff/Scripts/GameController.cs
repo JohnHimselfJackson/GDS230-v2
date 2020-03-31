@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
     public static bool GameIsPaused = false;
     public states myState;
     public GameObject pausePanel;
-    public Transform myButton;
 
-    UIBehaviour myBehaviour;
+
+
 
     public enum states
     {
@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        myBehaviour = GetComponent<UIBehaviour>();
+
     }
 
     // Update is called once per frame
@@ -47,11 +47,9 @@ public class GameController : MonoBehaviour
         {
             case states.Paused:
                 Time.timeScale = 0f;
-                pausePanel.SetActive(true);
                 break;
             case states.Unpaused:
                 Time.timeScale = 1f;
-                pausePanel.SetActive(false);
                 break;
             default:
                 Debug.Log("REEEEE");
@@ -65,7 +63,6 @@ public class GameController : MonoBehaviour
         myState = states.Paused;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
-        //myBehaviour.Normalize(myButton);
     }
 
     public void Resume()
@@ -74,6 +71,5 @@ public class GameController : MonoBehaviour
         myState = states.Unpaused;
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
-        //myBehaviour.Normalize(myButton);
     }
 }
