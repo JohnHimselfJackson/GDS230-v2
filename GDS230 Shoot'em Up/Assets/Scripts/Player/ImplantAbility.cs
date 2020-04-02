@@ -58,7 +58,6 @@ public class ImplantAbility : MonoBehaviour
     void Update()
     {
         ImplantSelect();
-        Shield();
 
         if (dashing)
         {
@@ -77,6 +76,7 @@ public class ImplantAbility : MonoBehaviour
 
             case (Implant.Shield):
                 shieldActive = true;
+                Debug.Log("Shield");
                 break;
         }
     }
@@ -174,6 +174,21 @@ public class ImplantAbility : MonoBehaviour
         }
     }
     #endregion
+
+    public void ActivateImplant()
+    {
+        if (bDash)
+        {
+            BioticDash();
+            return; 
+        }
+
+        if (shieldActive)
+        {
+            Shield();
+            return;
+        }
+    }
 
     void Cooldown()
     {

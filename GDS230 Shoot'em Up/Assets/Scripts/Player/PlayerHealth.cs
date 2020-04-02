@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         {
             implant.DamageShield(damage);
         }
+
         //Takes damage from health
         health = health - damage;
 
