@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
 
     public Transform muzzle;
     public GameObject bulletPrefab;
+    public GameObject laserPrefab;
     public bool shooting;
 
     void Start()
