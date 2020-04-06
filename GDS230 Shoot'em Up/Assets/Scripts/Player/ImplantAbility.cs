@@ -5,11 +5,14 @@ using UnityEngine;
 public class ImplantAbility : MonoBehaviour
 {
     private CharacterController2D cC;
+    private PlayerHealth playerHealth;
+
     public Rigidbody2D rb;
     public enum Implant { BioticDash, Shield };
     public Implant implant;
 
     public GameObject muzzle;
+    private float cooldownRate;
 
     #region Biotic Dash Variables
     [HideInInspector]
@@ -28,13 +31,16 @@ public class ImplantAbility : MonoBehaviour
     public GameObject shieldObj;
     public bool shieldActive;
     private float maxShieldHealth;
-    private float curShieldHealth;
+    private float cooldown;
+    [SerializeField]
+    public float curShieldHealth;
     #endregion
 
     void Awake()
     {
         cC = GetComponent<CharacterController2D>();
         rb = GetComponent<Rigidbody2D>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void Start()
@@ -44,7 +50,9 @@ public class ImplantAbility : MonoBehaviour
         curShieldHealth = maxShieldHealth;
         #endregion
 
+        //For Testing Only
         //implant = Implant.BioticDash;
+        //implant = Implant.Shield;
     }
 
     void Update()
@@ -68,6 +76,7 @@ public class ImplantAbility : MonoBehaviour
 
             case (Implant.Shield):
                 shieldActive = true;
+                Debug.Log("Shield");
                 break;
         }
     }
@@ -153,11 +162,49 @@ public class ImplantAbility : MonoBehaviour
         }
     }
 
-    void DamageShield(float shieldDamage)
+    public void DamageShield(float shieldDamage)
     {
         curShieldHealth = curShieldHealth - shieldDamage;
+
+        if (curShieldHealth <= 0)
+        {
+            playerHealth.Damage(-1 * curShieldHealth);
+            //Shield break animation
+            shieldActive = false;
+        }
     }
     #endregion
+
+    public void ActivateImplant()
+    {
+        if (bDash)
+        {
+            BioticDash();
+            return; 
+        }
+
+        if (shieldActive)
+        {
+            Shield();
+            return;
+        }
+    }
+
+    void Cooldown()
+    {
+        if (!shieldActive)
+        {
+            cooldown = 100f - cooldownRate * Time.deltaTime;
+            if (cooldown <=0)
+            {
+                shieldActive = true;
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {

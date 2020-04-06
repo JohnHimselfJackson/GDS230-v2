@@ -10,9 +10,20 @@ public class PlayerHealth : MonoBehaviour
     public float armour;
     public Slider healthSlider;
     public Animator heartBeatAnim;
+    private ImplantAbility implant;
+
+    void Awake()
+    {
+        implant = FindObjectOfType<ImplantAbility>();
+    }
 
     public void Damage(float damage)
     {
+        if (implant.shieldActive && implant.curShieldHealth <= 0)
+        {
+            implant.DamageShield(damage);
+        }
+
         //Takes damage from health
         health = health - damage;
 
