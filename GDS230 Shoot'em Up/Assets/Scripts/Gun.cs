@@ -61,6 +61,9 @@ public class Gun : MonoBehaviour
         weaponReference.firePosition = muzzle;
     }
 
+
+
+
     void Update()
     {
         //Fire rate
