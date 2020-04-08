@@ -116,3 +116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionSprite: {fileID: 0}
   explosionAnimation: {fileID: 0}
+  unbreakable:
+    serializedVersion: 2
+    m_Bits: 2048
+  breakable:
+    serializedVersion: 2
+    m_Bits: 1024

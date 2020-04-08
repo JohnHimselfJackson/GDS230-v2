@@ -16,6 +16,7 @@ public class GruntScript : GenericEnemy
     RaycastHit2D[] rightHitGround;
     GameObject testTarget;
 
+    public Animator anim;
     public string gunType;
     #endregion
 
@@ -108,15 +109,17 @@ public class GruntScript : GenericEnemy
     // the attack function is what is called whenever the bot is attacking the player
     public override void Attack()
     {
+        anim.SetBool("Walking", false);
         //for attacking it works off of the idea of shoot time, this allows the attacking phase to be broken in to two segments. The Pause and the attack. this gives the player something to react to as the pause, which is always the same length, always happens before they shoot.
         //with this if the enemy is still in the attacking phase and not ready to move on (the shooting time < 1.5 seconds) this if statement runs
-        if (shootingtime < 1.5f)
+        if (shootingtime < 1)
         {
             //when the state runs it increase the shooting time variable by deltatime to ensure it progresses through the stage
             shootingtime += Time.deltaTime;
             //if the shooting time is over 1 second and it hasnt started the shooting phase it passes the if below and calls an attack from the enemies weapon
-            if (shootingtime >1 && shooting)
+            if (shootingtime > 0.5f && shooting)
             {
+                transform.localScale = new Vector3(0.9f, 1, 1);
                 // sets the variable keeping track of shooting started to false to avoid the weapon doing its shoot function multiple times
                 shooting = false;
                 shoot();
@@ -125,6 +128,7 @@ public class GruntScript : GenericEnemy
         // once the shoot time is over 1.5 seconds it resets the variables so that the enemy will enter the follow track and be prepared for next shoot cycle
         else
         {
+            transform.localScale = new Vector3(1, 1, 1);
             followtime = 3;
             shootingtime = 0;
             shooting = true;
@@ -141,12 +145,14 @@ public class GruntScript : GenericEnemy
         if (CheckWalk("Left") && transform.position.x > target.transform.position.x && (target.transform.position.x - transform.position.x) < -1.5f)
         {
             //the enemy will move left assuming that the above was correct via translate at the speed of its global speed
+            anim.SetBool("Walking", true);
             transform.Translate(-transform.right * mySpeed * Time.deltaTime, Space.Self);
         }
         //checks that the bot can move right, that the player is to the right and that the player is not in the minimum range
         else if (CheckWalk("Right") && transform.position.x < target.transform.position.x && (target.transform.position.x - transform.position.x) > 1.5f)
         {
             //the enemy will move right assuming that the above was correct via translate at the speed of its global speed
+            anim.SetBool("Walking", true);
             transform.Translate(transform.right * mySpeed * Time.deltaTime, Space.Self);
         }
         // the else exists as a catch all in the case that the bot cant or doesnt need to move and puts the bot into into an attack phase 
@@ -171,10 +177,11 @@ public class GruntScript : GenericEnemy
                 if (GroundCastHitBarrier(rightHitGround))
                 {
                     //the enemy will move right via translate at the speed of its global speed
+                    anim.SetBool("Walking", true);
                     transform.Translate(transform.right * mySpeed * Time.deltaTime, Space.Self);
                 }
             }
-            else if(!movingLeft && BoxCastForBarrier(transform.position + new Vector3(0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
+            else if(!movingLeft && BoxCastForBarrier(transform.position + new Vector3(0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
             {
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -209,10 +216,11 @@ public class GruntScript : GenericEnemy
                 if (GroundCastHitBarrier(leftHitGround))
                 {
                     //the enemy will move left via translate at the speed of its global speed
+                    anim.SetBool("Walking", true);
                     transform.Translate(-transform.right * mySpeed * Time.deltaTime, Space.Self);
                 }
             }
-            else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
+            else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
             {
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0,180, 0);
@@ -279,6 +287,7 @@ public class GruntScript : GenericEnemy
     //ends patrol so that the enemy goes back into an idle/wait phase
     void PatrollingOver()
     {
+        anim.SetBool("Walking", false);
         //resets the patrolling variables
         patrolling = false;
         patrolsDone = 0;
@@ -323,19 +332,19 @@ public class GruntScript : GenericEnemy
         if(direction == "Right")
         {
             //raycasts down for floor info
-            rightHitGround = Physics2D.RaycastAll(transform.position + new Vector3(0.15f, -0.31f, 0), Vector3.down, 0.2f);
+            rightHitGround = Physics2D.RaycastAll(transform.position + new Vector3(0.15f, -0.46f, 0), Vector3.down, 0.2f);
             //returns a bool based on if there is ground beneath is and if there nothing infront
-            returnThis = GroundCastHitBarrier(rightHitGround) && !BoxCastForBarrier(transform.position + new Vector3(0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
+            returnThis = GroundCastHitBarrier(rightHitGround) && !BoxCastForBarrier(transform.position + new Vector3(0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
         }
         //if told to check right
         else if (direction == "Left")
         {
             //raycasts down for floor info
-            leftHitGround = Physics2D.RaycastAll(transform.position + new Vector3(-0.15f, -0.31f, 0), Vector3.down, 0.2f);
+            leftHitGround = Physics2D.RaycastAll(transform.position + new Vector3(-0.15f, -0.46f, 0), Vector3.down, 0.2f);
             //returns a bool based on if there is ground beneath is and if there nothing infront
             if (leftHitGround.Length > 0)
             {
-                returnThis = GroundCastHitBarrier(leftHitGround) && !BoxCastForBarrier(transform.position + new Vector3(-0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
+                returnThis = GroundCastHitBarrier(leftHitGround) && !BoxCastForBarrier(transform.position + new Vector3(-0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
             }
         }
         //in the case a valid dirrection was not good
@@ -356,7 +365,11 @@ public class GruntScript : GenericEnemy
             RaycastHit2D[] hits = Physics2D.BoxCastAll(bCOrigin, size, 0f, Vector3.zero);
             for (int cc = 0; cc < hits.Length; cc++)
             {
-                if (hits[cc].collider.gameObject.CompareTag(tagTested))
+                if (hits[cc].collider.gameObject.CompareTag("Breakable Wall"))
+                {
+                    returnthis = true;
+                }
+                if (hits[cc].collider.gameObject.CompareTag("Barrier"))
                 {
                     returnthis = true;
                 }

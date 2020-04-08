@@ -24,9 +24,11 @@ public class BossScript : MonoBehaviour
     public GameObject laserInstance;
 
     public TMP_Text healthTB;
+    
+    public LayerMask unbreakable;
+    public LayerMask breakable;
 
     float playerWidth = 0.6f;
-
 
     bool immune = true;
     bool initiating = true;
@@ -254,13 +256,14 @@ public class BossScript : MonoBehaviour
             print("Error expected as boss zone is too small");
         }
         float safeZoneX = Random.Range(0f, positionRange);
-        for (int mm = 0; mm <= 9; mm++)
+        for (int mm = 0; mm <= 6; mm++)
         {
             if (mm < 0)
             {
                 mm = 0;
             }
             float potentialLandingLocation = Random.Range(bossAreaStart.x, bossAreaPlayerLimit.x);
+            print(potentialLandingLocation);
             if (potentialLandingLocation > safeZoneX - playerWidth && potentialLandingLocation < safeZoneX + playerWidth)
             {
                 mm--;
@@ -272,7 +275,7 @@ public class BossScript : MonoBehaviour
             }
         }
 
-        for (int mm = 0; mm <= 9; mm++)
+        for (int mm = 0; mm <= 6; mm++)
         {
             Instantiate<GameObject>(mortarShot, new Vector3(mortarXs[mm], 0, 0), Quaternion.identity);
         }
@@ -291,30 +294,53 @@ public class BossScript : MonoBehaviour
     }
     void Laser()
     {
+        RaycastHit2D hitUnbreakable = Physics2D.Raycast(transform.position, Vector2.down, 10, unbreakable);
+        RaycastHit2D hitBreakable = Physics2D.Raycast(transform.position, Vector2.down, 10, breakable);
+
         bool scanningRight = false;
         Vector3 toStart = laserScanStart - laserStartPoint;
         Vector3 toEnd = laserScanEnd - laserStartPoint;
-
+        Vector3 hitPoint = new Vector3();
 
         float angle = Vector3.Angle(toStart, toEnd);
 
         float baseAngle = - Vector3.Angle(Vector3.down, toStart);
         float startingAngle = baseAngle - Random.Range(0, angle);
 
-        RaycastHit2D initialHit = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))));
-            
-        Vector3 hitPoint = initialHit.point;
-        Vector3 laserVector = hitPoint - laserStartPoint;
-        float laserLength = Vector3.Distance(laserStartPoint, hitPoint);
-        Vector3 laserMidPoint = (hitPoint + laserStartPoint) / 2;
+        RaycastHit2D initialHitBreakable = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))), breakable);
+        RaycastHit2D initialHitUnbreakable = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))), unbreakable);
 
+        if (hitUnbreakable && hitBreakable)
+        {
+            if (hitBreakable.point.y > hitUnbreakable.point.y)
+            {
+                hitPoint = initialHitBreakable.point;
+            }
+            else
+            {
+                hitPoint = initialHitUnbreakable.point;
+            }
+        }
+        else if (hitUnbreakable)
+        {
+            hitPoint = initialHitUnbreakable.point;
+        }
+        else if (hitBreakable)
+        {
+            hitPoint = initialHitBreakable.point;
+        }
+        if (hitPoint != null)
+        {
+            Vector3 laserVector = hitPoint - laserStartPoint;
+            float laserLength = Vector3.Distance(laserStartPoint, hitPoint);
+            Vector3 laserMidPoint = (hitPoint + laserStartPoint) / 2;
 
-        bossLaser = Instantiate(laserInstance, laserMidPoint, Quaternion.Euler(0, 0, startingAngle));
-        bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(0.3f , laserLength);
-        bossLaser.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Tiled;
-        bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(0.3f, laserLength);
-        bossLaser.transform.localScale = new Vector3(1, 1, 1);
-
+            bossLaser = Instantiate(laserInstance, laserMidPoint, Quaternion.Euler(0, 0, startingAngle));
+            bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(0.3f, laserLength);
+            bossLaser.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Tiled;
+            bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(0.3f, laserLength);
+            bossLaser.transform.localScale = new Vector3(1, 1, 1);
+        }
 
         //shoots a raycast out for laser
         //gets distance and makes lase thing out of parts to the point
@@ -329,13 +355,8 @@ public class BossScript : MonoBehaviour
 
 
     #endregion
-    
-    void CreateBullet()
-    {
-        // determine rotation of bullet and the direction
-        GameObject bullet = Instantiate(projectile, (gameObject.transform.position + startDisplacement), gameObject.transform.rotation * Quaternion.Euler(new Vector3(0, 0, Random.Range(-shotArc / 2, shotArc / 2))));
-        bullet.GetComponent<Rigidbody2D>().AddForce(-bullet.transform.right * bulletSpeed);
-    }
+
+    #region Misc Functions      
 
     public void DropCoin()
     {
@@ -360,8 +381,7 @@ public class BossScript : MonoBehaviour
     {
         CancelInvoke("DropCoin");
     }
-
-
+    
     void UpdateHealthText()
     {
         switch (stage)
@@ -389,4 +409,5 @@ public class BossScript : MonoBehaviour
                 break;
         }
     }
+    #endregion
 }
