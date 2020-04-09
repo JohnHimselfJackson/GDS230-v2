@@ -24,7 +24,7 @@ public class HeavyEditor : Editor
         #region MoveChecks
 
         //if (Physics2D.BoxCastAll(GE.transform.position + new Vector3(-0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), 0f, Vector3.zero,0,8).Length == 0)
-        if (!BoxCastForBarrier(GE.transform.position + new Vector3(-0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
+        if (!BoxCastForBarrier(GE.transform.position + new Vector3(-0.6f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier"))
         {
             Handles.color = Color.green;
         }
@@ -32,10 +32,10 @@ public class HeavyEditor : Editor
         {
             Handles.color = Color.red;
         }
-        Handles.DrawWireCube(GE.transform.position + new Vector3(-0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0));
+        Handles.DrawWireCube(GE.transform.position + new Vector3(-0.6f, 0, 0), new Vector3(0.1f, 1f, 0));
 
         //if (Physics2D.BoxCastAll(GE.transform.position + new Vector3(0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), 0f, Vector3.zero).Length <= 2)
-        if (!BoxCastForBarrier(GE.transform.position + new Vector3(0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
+        if (!BoxCastForBarrier(GE.transform.position + new Vector3(0.6f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier"))
         {
             Handles.color = Color.green;
         }
@@ -43,10 +43,10 @@ public class HeavyEditor : Editor
         {
             Handles.color = Color.red;
         }
-        Handles.DrawWireCube(GE.transform.position + new Vector3(0.18f, 0, 0), new Vector3(0.05f, 0.6f, 0));
+        Handles.DrawWireCube(GE.transform.position + new Vector3(0.6f, 0, 0), new Vector3(0.1f, 1f, 0));
 
-        RaycastHit2D[] leftHitGround = Physics2D.RaycastAll(GE.transform.position + new Vector3(-0.15f, -0.31f, 0), Vector3.down, 0.2f);
-        RaycastHit2D[] rightHitGround = Physics2D.RaycastAll(GE.transform.position + new Vector3(0.15f, -0.31f, 0), Vector3.down, 0.2f);
+        RaycastHit2D[] leftHitGround = Physics2D.RaycastAll(GE.transform.position + new Vector3(-0.4f, -0.71f, 0), Vector3.down, 0.2f);
+        RaycastHit2D[] rightHitGround = Physics2D.RaycastAll(GE.transform.position + new Vector3(0.4f, -0.71f, 0), Vector3.down, 0.2f);
         if (leftHitGround.Length > 0)
         {
             if (GroundCastHitBarrier(leftHitGround))
@@ -62,7 +62,7 @@ public class HeavyEditor : Editor
         {
             Handles.color = Color.red;
         }
-        Handles.ArrowHandleCap(0, GE.transform.position + new Vector3(-0.15f, -0.3f, 0), Quaternion.LookRotation(Vector3.down), 0.2f, EventType.Repaint);
+        Handles.ArrowHandleCap(0, GE.transform.position + new Vector3(-0.4f, -0.7f, 0), Quaternion.LookRotation(Vector3.down), 0.2f, EventType.Repaint);
         if (rightHitGround.Length > 0)
         {
             if (GroundCastHitBarrier(rightHitGround))
@@ -78,7 +78,7 @@ public class HeavyEditor : Editor
         {
             Handles.color = Color.red;
         }
-        Handles.ArrowHandleCap(0, GE.transform.position + new Vector3(0.15f, -0.3f, 0), Quaternion.LookRotation(Vector3.down), 0.2f, EventType.Repaint);
+        Handles.ArrowHandleCap(0, GE.transform.position + new Vector3(0.4f, -0.7f, 0), Quaternion.LookRotation(Vector3.down), 0.2f, EventType.Repaint);
         #endregion
     }
 
