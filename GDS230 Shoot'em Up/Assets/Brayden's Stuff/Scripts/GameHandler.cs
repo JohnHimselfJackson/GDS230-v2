@@ -25,6 +25,6 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         timer = timer + Time.deltaTime;
-        timerText.text = "TIME " + timer.ToString("F1");
+        //timerText.text = "TIME " + timer.ToString("F1");
     }
 }
