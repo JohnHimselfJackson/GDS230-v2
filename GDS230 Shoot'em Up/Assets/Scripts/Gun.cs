@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     public GameObject laserPrefab;
     public bool shooting;
 
-    void Start()
+    void Awake()
     {
         weaponReference = gameObject.AddComponent<GenericPlayerWeapon>();
         PlayerWeaponSaveData[] playerWeapons = SaveSystem.LoadWeaponData();

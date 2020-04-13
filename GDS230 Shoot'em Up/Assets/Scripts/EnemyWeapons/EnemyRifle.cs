@@ -6,11 +6,11 @@ public class EnemyRifle : GenericEnemyWeapon
 {
     void Awake()
     {
+        parentsTransform = GetComponentInParent<Transform>();
         gunName = "Rifle";
         shotArc = 22;
         numberOfShots = 3;
         timeBetweenShots = 0.15f;
-        bulletSpeed = 90f;
-        startDisplacement = -gameObject.transform.right * 0.15f;
+        bulletSpeed = 90f;      
     }
 }

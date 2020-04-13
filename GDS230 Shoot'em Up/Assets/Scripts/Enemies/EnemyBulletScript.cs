@@ -15,10 +15,14 @@ public class EnemyBulletScript : MonoBehaviour
         if (GO.CompareTag("Player"))
         {
             GO.GetComponent<PlayerHealth>().Damage(2);
-        }
-        else if(GO.tag != "Enemy")
-        {
             Destroy(this.gameObject);
+        }
+        else if(GO.tag == "Enemy")
+        {
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
