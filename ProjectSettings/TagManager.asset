@@ -24,8 +24,8 @@ TagManager:
   - Player
   - Breakable
   - Unbreakable
-  - 
-  - 
+  - TextBlock
+  - Text
   - 
   - 
   - 
