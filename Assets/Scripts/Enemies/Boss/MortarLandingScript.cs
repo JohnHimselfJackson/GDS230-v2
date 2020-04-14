@@ -30,7 +30,7 @@ public class MortarLandingScript : MonoBehaviour
     IEnumerator Explode()
     {
         GetComponent<Animator>().Play("MortarExplosionAnimation");
-        Physics2D.BoxCastAll(transform.position , new Vector2(0.5f,0.5f), 0, Vector2.zero);
+        CheckForPlayer(Physics2D.BoxCastAll(transform.position, new Vector2(0.5f, 0.5f), 0, Vector2.zero));
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
