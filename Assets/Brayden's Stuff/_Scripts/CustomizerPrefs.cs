@@ -6,16 +6,9 @@ using UnityEngine.UI;
 public class CustomizerPrefs : MonoBehaviour
 {
     public StoreManagement storeSettings;
+    
+    public Sprite charWeaponSprite;
 
-    public enum stateSelect
-    { 
-        Choice1,
-        Choice2,
-        Choice3,
-        Choice4
-    }
-
-    public stateSelect selection;
 
     //A reference to our ints that keep track of what is selected.
     public int i;
@@ -23,6 +16,7 @@ public class CustomizerPrefs : MonoBehaviour
     public int o;
     public int a;
     public int u;
+    public int b;
 
     //A reference to our customization buttons;
     [System.Serializable]
@@ -33,7 +27,16 @@ public class CustomizerPrefs : MonoBehaviour
         public Button[] rifleButtons;
         public Button[] handgunButtons;
         public Button[] headsetButtons;
+        public Button[] hairButtons;
     }
+
+
+    public Sprite[] armSprite;
+    public Sprite[] shirtSprite;
+    public Sprite[] rifleSprite;
+    public Sprite[] handgunSprite;
+    public Sprite[] headsetSprite;
+    public Sprite[] hairSprite;
 
     [SerializeField]
     public CustomizedButtons myCustomizeButtons;
@@ -46,13 +49,13 @@ public class CustomizerPrefs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //SelectVal();
-        SelectionValidate();
+        SelectVal();
     }
 
     public void SetRifle(int o)
-    {
+    { 
         Debug.Log(o);
+        //charWeaponSprite = rifleSprite[o];
         SavePrefs();
     }
 
@@ -72,6 +75,11 @@ public class CustomizerPrefs : MonoBehaviour
     }
 
     public void SetShirt(int e)
+    {
+        SavePrefs();
+    }
+
+    public void SetHair(int b)
     {
         SavePrefs();
     }
@@ -178,21 +186,121 @@ public class CustomizerPrefs : MonoBehaviour
             myCustomizeButtons.shirtsButtons[2].interactable = false;
         }
 
-        if (StoreManagement.shirtFourSold == 1 && e != 3)
+        if (StoreManagement.hairFourSold == 1 && e != 3)
         {
-            myCustomizeButtons.shirtsButtons[3].interactable = true;
+            myCustomizeButtons.hairButtons[3].interactable = true;
         }
         else
         {
-            myCustomizeButtons.shirtsButtons[3].interactable = false;
+            myCustomizeButtons.hairButtons[3].interactable = false;
         }
-    }
 
-    void SelectionValidate()
-    {
-        for (e = 0; e < 4; e++)
+        if (StoreManagement.hairOneSold == 1 && b != 0)
         {
-            Debug.Log("Your loops: " + e);
+            myCustomizeButtons.hairButtons[0].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.hairButtons[0].interactable = false;
+        }
+
+        if (StoreManagement.hairTwoSold == 1 && b != 1)
+        {
+            myCustomizeButtons.shirtsButtons[1].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.shirtsButtons[1].interactable = false;
+        }
+
+        if (StoreManagement.hairThreeSold == 1 && b != 2)
+        {
+            myCustomizeButtons.hairButtons[2].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.shirtsButtons[2].interactable = false;
+        }
+
+        if (StoreManagement.hairFourSold == 1 && b != 3)
+        {
+            myCustomizeButtons.hairButtons[3].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.hairButtons[3].interactable = false;
+        }
+
+        if (StoreManagement.hairOneSold == 1 && u != 0)
+        {
+            myCustomizeButtons.hairButtons[0].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.hairButtons[0].interactable = false;
+        }
+
+        if (StoreManagement.hairTwoSold == 1 && u != 1)
+        {
+            myCustomizeButtons.shirtsButtons[1].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.shirtsButtons[1].interactable = false;
+        }
+
+        if (StoreManagement.hairThreeSold == 1 && u != 2)
+        {
+            myCustomizeButtons.hairButtons[2].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.shirtsButtons[2].interactable = false;
+        }
+
+        if (StoreManagement.hairFourSold == 1 && u != 3)
+        {
+            myCustomizeButtons.hairButtons[3].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.hairButtons[3].interactable = false;
+        }
+
+        if (StoreManagement.hairOneSold == 1 && a != 0)
+        {
+            myCustomizeButtons.hairButtons[0].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.hairButtons[0].interactable = false;
+        }
+
+        if (StoreManagement.hairTwoSold == 1 && a != 1)
+        {
+            myCustomizeButtons.shirtsButtons[1].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.shirtsButtons[1].interactable = false;
+        }
+
+        if (StoreManagement.hairThreeSold == 1 && a != 2)
+        {
+            myCustomizeButtons.hairButtons[2].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.shirtsButtons[2].interactable = false;
+        }
+
+        if (StoreManagement.hairFourSold == 1 && a != 3)
+        {
+            myCustomizeButtons.hairButtons[3].interactable = true;
+        }
+        else
+        {
+            myCustomizeButtons.hairButtons[3].interactable = false;
         }
     }
 

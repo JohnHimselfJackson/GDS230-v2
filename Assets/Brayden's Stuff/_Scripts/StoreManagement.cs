@@ -14,6 +14,7 @@ public class StoreManagement : MonoBehaviour
         public Button[] handgunButtons;
         public Button[] shirtButtons;
         public Button[] headsetButtons;
+        public Button[] hairButtons;
 
     }
 
@@ -26,6 +27,7 @@ public class StoreManagement : MonoBehaviour
         public Text[] headSetPrice;
         public Text[] handGunPrice;
         public Text[] riflePrice;
+        public Text[] hairPrice;
     }
 
     [SerializeField]
@@ -44,6 +46,7 @@ public class StoreManagement : MonoBehaviour
     public int characterValue;
     public int shirtValue;
     public int headSetValue;
+    public int hairValue;
 
     //Integers used for tracking what item will be sold in their array.
     public int i;
@@ -51,6 +54,7 @@ public class StoreManagement : MonoBehaviour
     public int u;
     public int a;
     public int o;
+    public int b;
 
     static public int armOneSold;
     static public int armTwoSold;
@@ -76,6 +80,11 @@ public class StoreManagement : MonoBehaviour
     static public int headsetTwoSold;
     static public int headsetThreeSold;
     static public int headsetFourSold;
+
+    static public int hairOneSold;
+    static public int hairTwoSold;
+    static public int hairThreeSold;
+    static public int hairFourSold;
     //----------------------------------------------------------------
 
     void Start()
@@ -93,6 +102,7 @@ public class StoreManagement : MonoBehaviour
         WeaponBuyValidation();
         HandGunBuyValidation();
         VisorBuyValidation();
+        HairBuyValidation();
     }
 
     //-----------------------------------------------------------------
@@ -107,6 +117,7 @@ public class StoreManagement : MonoBehaviour
     void CheckPrefs()
     {
         zelAmount = PlayerPrefs.GetInt("ZELAmount");
+
         armOneSold = PlayerPrefs.GetInt("isCharOneSold");
         armTwoSold = PlayerPrefs.GetInt("isCharTwoSold");
         armThreeSold = PlayerPrefs.GetInt("isCharThreeSold");
@@ -131,6 +142,11 @@ public class StoreManagement : MonoBehaviour
         headsetTwoSold = PlayerPrefs.GetInt("isVisorTwoSold");
         headsetThreeSold = PlayerPrefs.GetInt("isVisorThreeSold");
         headsetFourSold = PlayerPrefs.GetInt("isVisorFourSold");
+
+        hairOneSold = PlayerPrefs.GetInt("isHairOneSold");
+        hairTwoSold = PlayerPrefs.GetInt("isHairTwoSold");
+        hairThreeSold = PlayerPrefs.GetInt("isHairThreeSold");
+        hairFourSold = PlayerPrefs.GetInt("isHairFourSold");
     }
 
     public void BuyCharacterOne()
@@ -363,7 +379,7 @@ public class StoreManagement : MonoBehaviour
     public void BuyHandGunOne()
     {
         a = 0;
-        PlayerPrefs.SetInt("isVisorOneSold", 1);
+        PlayerPrefs.SetInt("ishandGunOneSold", 1);
         BuyVisor(a);
         Debug.Log(headsetOneSold);
     }
@@ -371,21 +387,21 @@ public class StoreManagement : MonoBehaviour
     public void BuyHandGunTwo()
     {
        a = 1;
-        PlayerPrefs.SetInt("isVisorTwoSold", 1);
+        PlayerPrefs.SetInt("ishandGunTwoSold", 1);
         BuyVisor(a);
     }
 
     public void BuyHandGunThree()
     {
         a = 2;
-        PlayerPrefs.SetInt("isVisorThreeSold", 1);
+        PlayerPrefs.SetInt("ishandGunThreeSold", 1);
         BuyVisor(a);
     }
 
     public void BuyHandGunFour()
     {
         a = 3;
-        PlayerPrefs.SetInt("isVisorFourSold", 1);
+        PlayerPrefs.SetInt("ishandGunFourSold", 1);
         BuyVisor(a);
     }
 
@@ -509,6 +525,83 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.headsetButtons[3].interactable = false;
         }
     }
+
+    public void BuyHairOne()
+    {
+        b = 0;
+        PlayerPrefs.SetInt("isHairOneSold", 1);
+        BuyHair(b);
+        Debug.Log(armOneSold);
+    }
+
+    public void BuyHairTwo()
+    {
+        b = 1;
+        PlayerPrefs.SetInt("isHairTwoSold", 1);
+        BuyHair(b);
+    }
+
+    public void BuyHairThree()
+    {
+        b = 2;
+        PlayerPrefs.SetInt("isHairThreeSold", 1);
+        BuyHair(b);
+    }
+
+    public void BuyHairFour()
+    {
+        b = 3;
+        PlayerPrefs.SetInt("isHairFourSold", 1);
+        BuyHair(b);
+    }
+
+    public void BuyHair(int b)
+    {
+        zelAmount -= hairValue;
+        SavePrefs();
+        myText.hairPrice[b].text = "Sold!";
+        myCosmetics.hairButtons[b].gameObject.SetActive(false);
+    }
+
+    void HairBuyValidation()
+    {
+        if (zelAmount >= 1800 && hairOneSold == 0)
+        {
+            myCosmetics.hairButtons[0].interactable = true;
+        }
+        else
+        {
+            myCosmetics.hairButtons[0].interactable = false;
+        }
+
+        if (zelAmount >= 1800 && hairTwoSold == 0)
+        {
+            myCosmetics.hairButtons[1].interactable = true;
+        }
+        else
+        {
+            myCosmetics.hairButtons[1].interactable = false;
+        }
+
+        if (zelAmount >= 1800 && hairThreeSold == 0)
+        {
+            myCosmetics.hairButtons[2].interactable = true;
+        }
+        else
+        {
+            myCosmetics.hairButtons[2].interactable = false;
+        }
+
+        if (zelAmount >= 1800 && hairFourSold == 0)
+        {
+            myCosmetics.hairButtons[3].interactable = true;
+        }
+        else
+        {
+            myCosmetics.hairButtons[3].interactable = false;
+        }
+    }
+
 
 
     //handles our save and deletion of prefs.
