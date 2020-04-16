@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController2D controller;
+    private CharacterController2D controller;
+    private Animator animator;
 
     public Joystick joystick;
 
@@ -13,9 +14,17 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
 
+    void Start()
+    {
+        controller = FindObjectOfType<CharacterController2D>();
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         horizontalMove = joystick.Horizontal * runSpeed;
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         float verticalMove = joystick.Vertical;
 

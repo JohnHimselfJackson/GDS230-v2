@@ -5,14 +5,27 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private ImplantAbility implant;
+
     public float health;
     public float maxHealth;
     public float armour;
     public Slider healthSlider;
     public Animator heartBeatAnim;
 
+    void Start()
+    {
+        implant = FindObjectOfType<ImplantAbility>();    
+    }
+
     public void Damage(float damage)
     {
+        if(implant.shieldOn == true)
+        {
+            implant.DamageShield(damage);
+            return;
+        }
+
         //Takes damage from health
         health = health - damage;
 

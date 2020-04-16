@@ -5,7 +5,10 @@ using UnityEngine;
 public class ImplantAbility : MonoBehaviour
 {
     private CharacterController2D cC;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private Animator animator;
+    public Animator shieldAnimator;
+
     public enum Implant { BioticDash, Shield };
     public Implant implant;
 
@@ -27,14 +30,16 @@ public class ImplantAbility : MonoBehaviour
     #region Shield Variables
     public GameObject shieldObj;
     public bool shieldActive;
-    private float maxShieldHealth;
-    private float curShieldHealth;
+    public bool shieldOn;
+    public float maxShieldHealth = 25f;
+    public float curShieldHealth;
     #endregion
 
     void Awake()
     {
-        cC = GetComponent<CharacterController2D>();
+        cC = FindObjectOfType<CharacterController2D>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -55,6 +60,7 @@ public class ImplantAbility : MonoBehaviour
         {
             Dash();
         }
+        print(shieldOn);
     }
 
     void ImplantSelect()
@@ -106,18 +112,20 @@ public class ImplantAbility : MonoBehaviour
 
     void Dash()
     {
-        if (dashing)
-        {
-            //Dash forward
-            transform.position = Vector2.Lerp(transform.position, hitpoint, speed * Time.deltaTime);
-            Debug.Log("Dash started");
-            cC.m_AirControl = false;
-            rb.gravityScale = 0f;
-            refreshImplant = false;
+       
+        animator.SetBool("IsDashing", true);
+        print("animator true");
 
-            //Instantiate(dashDes, hitpoint, Quaternion.identity);
-            Invoke("StopAbility", 0.2f);
-        }
+        //Dash forward
+        transform.position = Vector2.Lerp(transform.position, hitpoint, speed * Time.deltaTime);
+        Debug.Log("Dash started");
+        cC.m_AirControl = false;
+        rb.gravityScale = 0f;
+        refreshImplant = false;
+
+        //Instantiate(dashDes, hitpoint, Quaternion.identity);
+        Invoke("StopAbility", 0.2f);
+
 
         float distance = Vector2.Distance(muzzle.transform.position, hitpoint);
         //Debug.Log(distance);
@@ -134,7 +142,8 @@ public class ImplantAbility : MonoBehaviour
 
         if (distance <= threshold)
         {
-            rb.gravityScale = 3f;
+            animator.SetBool("IsDashing", false);
+            rb.gravityScale = 3f;                                                                                                                                               
             cC.m_AirControl = true;
             //Destroy(dashDes);
             //Stop dashing
@@ -145,17 +154,32 @@ public class ImplantAbility : MonoBehaviour
     #endregion
 
     #region Shield
-    void Shield()
+    public void Shield()
     {
-        if (shieldActive)
+        if (shieldActive && shieldOn == false)
         {
+            shieldOn = true;
             shieldObj.SetActive(true);
+            shieldAnimator.SetTrigger("ShieldUp");
+            curShieldHealth = 25f;
+            Debug.Log("ShieldStarted");
         }
     }
 
-    void DamageShield(float shieldDamage)
+    public void DamageShield(float shieldDamage)
     {
         curShieldHealth = curShieldHealth - shieldDamage;
+        BreakShield();
+    }
+    
+    void BreakShield()
+    {
+        if (curShieldHealth <= 0)
+        {
+            shieldObj.SetActive(false);
+            shieldOn = false;
+            print("ShieldDown");
+        }
     }
     #endregion
 
@@ -175,5 +199,6 @@ public class ImplantAbility : MonoBehaviour
         dashing = false;
         rb.gravityScale = 3f;
         cC.m_AirControl = true;
+        animator.SetBool("IsDashing", false);
     }
 }
