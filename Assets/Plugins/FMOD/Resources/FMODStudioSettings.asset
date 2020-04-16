@@ -15,8 +15,9 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: ../../../../../Program Files/FMOD SoundSystem/FMOD Studio 2.01.00/FMOD
+    Studio.exe
+  sourceBankPath: ..\..\..\..\..\Program Files\FMOD SoundSystem\FMOD Studio 2.01.00\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
