@@ -60,7 +60,7 @@ public class ImplantAbility : MonoBehaviour
         {
             Dash();
         }
-        print(shieldOn);
+        //print(shieldOn);
     }
 
     void ImplantSelect()
