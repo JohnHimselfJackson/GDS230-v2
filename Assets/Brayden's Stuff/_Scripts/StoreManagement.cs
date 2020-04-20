@@ -189,7 +189,7 @@ public class StoreManagement : MonoBehaviour
     //Handles how our buttons interact by checking sold characters.
     void ArmBuyValidation()
     {
-        if (zelAmount >= 1500 && armOneSold == 0)
+        if (zelAmount >= 1200 && armOneSold == 0)
         {
             myCosmetics.armButtons[0].interactable = true;
         }
@@ -198,7 +198,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.armButtons[0].interactable = false;
         }
 
-        if (zelAmount >= 1500 && armTwoSold == 0)
+        if (zelAmount >= 1200 && armTwoSold == 0)
         {
             myCosmetics.armButtons[1].interactable = true;
         }
@@ -207,7 +207,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.armButtons[1].interactable = false;
         }
 
-        if (zelAmount >= 1500 && armThreeSold == 0)
+        if (zelAmount >= 1200 && armThreeSold == 0)
         {
             myCosmetics.armButtons[2].interactable = true;
         }
@@ -216,7 +216,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.armButtons[2].interactable = false;
         }
 
-        if (zelAmount >= 1500 && armFourSold == 0)
+        if (zelAmount >= 1200 && armFourSold == 0)
         {
             myCosmetics.armButtons[3].interactable = true;
         }
@@ -264,7 +264,7 @@ public class StoreManagement : MonoBehaviour
 
     void ShirtBuyValidation()
     {
-        if (zelAmount >= 800 && shirtOneSold == 0)
+        if (zelAmount >= 1200 && shirtOneSold == 0)
         {
             myCosmetics.shirtButtons[0].interactable = true;
         }
@@ -273,7 +273,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.shirtButtons[0].interactable = false;
         }
 
-        if (zelAmount >= 800 && shirtTwoSold == 0)
+        if (zelAmount >= 1200 && shirtTwoSold == 0)
         {
             myCosmetics.shirtButtons[1].interactable = true;
         }
@@ -282,7 +282,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.shirtButtons[1].interactable = false;
         }
 
-        if (zelAmount >= 800 && shirtThreeSold == 0)
+        if (zelAmount >= 1200 && shirtThreeSold == 0)
         {
             myCosmetics.shirtButtons[2].interactable = true;
         }
@@ -291,7 +291,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.shirtButtons[2].interactable = false;
         }
 
-        if (zelAmount >= 800 && shirtFourSold == 0)
+        if (zelAmount >= 1200 && shirtFourSold == 0)
         {
             myCosmetics.shirtButtons[3].interactable = true;
         }
@@ -380,7 +380,7 @@ public class StoreManagement : MonoBehaviour
     {
         a = 0;
         PlayerPrefs.SetInt("ishandGunOneSold", 1);
-        BuyVisor(a);
+        BuyHandGun(a);
         Debug.Log(headsetOneSold);
     }
 
@@ -388,21 +388,21 @@ public class StoreManagement : MonoBehaviour
     {
        a = 1;
         PlayerPrefs.SetInt("ishandGunTwoSold", 1);
-        BuyVisor(a);
+        BuyHandGun(a);
     }
 
     public void BuyHandGunThree()
     {
         a = 2;
         PlayerPrefs.SetInt("ishandGunThreeSold", 1);
-        BuyVisor(a);
+        BuyHandGun(a);
     }
 
     public void BuyHandGunFour()
     {
         a = 3;
         PlayerPrefs.SetInt("ishandGunFourSold", 1);
-        BuyVisor(a);
+        BuyHandGun(a);
     }
 
     public void BuyHandGun(int a)
@@ -414,7 +414,7 @@ public class StoreManagement : MonoBehaviour
     }
     void HandGunBuyValidation()
     {
-        if (zelAmount >= 1800 && handGunOneSold == 0)
+        if (zelAmount >= 1200 && handGunOneSold == 0)
         {
             myCosmetics.handgunButtons[0].interactable = true;
         }
@@ -423,7 +423,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.handgunButtons[0].interactable = false;
         }
 
-        if (zelAmount >= 1800 && handGunTwoSold == 0)
+        if (zelAmount >= 1200 && handGunTwoSold == 0)
         {
             myCosmetics.handgunButtons[1].interactable = true;
         }
@@ -432,7 +432,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.handgunButtons[1].interactable = false;
         }
 
-        if (zelAmount >= 1800 && handGunThreeSold == 0)
+        if (zelAmount >= 1200 && handGunThreeSold == 0)
         {
             myCosmetics.handgunButtons[2].interactable = true;
         }
@@ -441,7 +441,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.handgunButtons[2].interactable = false;
         }
 
-        if (zelAmount >= 1800 && handGunFourSold == 0)
+        if (zelAmount >= 1200 && handGunFourSold == 0)
         {
             myCosmetics.handgunButtons[3].interactable = true;
         }
@@ -489,7 +489,7 @@ public class StoreManagement : MonoBehaviour
     }
     void VisorBuyValidation()
     {
-        if (zelAmount >= 1800 && headsetOneSold == 0)
+        if (zelAmount >= 1200 && headsetOneSold == 0)
         {
             myCosmetics.headsetButtons[0].interactable = true;
         }
@@ -498,7 +498,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.headsetButtons[0].interactable = false;
         }
 
-        if (zelAmount >= 1800 && headsetTwoSold == 0)
+        if (zelAmount >= 1200 && headsetTwoSold == 0)
         {
             myCosmetics.headsetButtons[1].interactable = true;
         }
@@ -507,7 +507,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.headsetButtons[1].interactable = false;
         }
 
-        if (zelAmount >= 1800 && headsetThreeSold == 0)
+        if (zelAmount >= 1200 && headsetThreeSold == 0)
         {
             myCosmetics.headsetButtons[2].interactable = true;
         }
@@ -516,7 +516,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.headsetButtons[2].interactable = false;
         }
 
-        if (zelAmount >= 1800 && headsetFourSold == 0)
+        if (zelAmount >= 1200 && headsetFourSold == 0)
         {
             myCosmetics.headsetButtons[3].interactable = true;
         }
@@ -531,7 +531,6 @@ public class StoreManagement : MonoBehaviour
         b = 0;
         PlayerPrefs.SetInt("isHairOneSold", 1);
         BuyHair(b);
-        Debug.Log(armOneSold);
     }
 
     public void BuyHairTwo()
@@ -565,7 +564,7 @@ public class StoreManagement : MonoBehaviour
 
     void HairBuyValidation()
     {
-        if (zelAmount >= 1800 && hairOneSold == 0)
+        if (zelAmount >= 1200 && hairOneSold == 0)
         {
             myCosmetics.hairButtons[0].interactable = true;
         }
@@ -574,7 +573,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.hairButtons[0].interactable = false;
         }
 
-        if (zelAmount >= 1800 && hairTwoSold == 0)
+        if (zelAmount >= 1200 && hairTwoSold == 0)
         {
             myCosmetics.hairButtons[1].interactable = true;
         }
@@ -583,7 +582,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.hairButtons[1].interactable = false;
         }
 
-        if (zelAmount >= 1800 && hairThreeSold == 0)
+        if (zelAmount >= 1200 && hairThreeSold == 0)
         {
             myCosmetics.hairButtons[2].interactable = true;
         }
@@ -592,7 +591,7 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.hairButtons[2].interactable = false;
         }
 
-        if (zelAmount >= 1800 && hairFourSold == 0)
+        if (zelAmount >= 1200 && hairFourSold == 0)
         {
             myCosmetics.hairButtons[3].interactable = true;
         }
@@ -601,9 +600,6 @@ public class StoreManagement : MonoBehaviour
             myCosmetics.hairButtons[3].interactable = false;
         }
     }
-
-
-
     //handles our save and deletion of prefs.
     public void SavePrefs()
     {
