@@ -121,7 +121,7 @@ public class HeavyScript : GenericEnemy
             if (shootingtime > 1 && shooting)
             {
                 // sets the variable keeping track of shooting started to false to avoid the weapon doing its shoot function multiple times
-                transform.localScale = new Vector3(0.9f, 1, 1);
+                anim.SetBool("shooting", true);
                 shooting = false;
                 shoot();
             }
@@ -129,7 +129,7 @@ public class HeavyScript : GenericEnemy
         // once the shoot time is over 1.5 seconds it resets the variables so that the enemy will enter the follow track and be prepared for next shoot cycle
         else
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            anim.SetBool("shooting", false);
             followtime = 3;
             shootingtime = 0;
             shooting = true;
@@ -416,4 +416,16 @@ public class HeavyScript : GenericEnemy
     }
 
     #endregion
+
+
+    public override void PreKill()
+    {
+        killDelay = 1.25f;
+        Collider2D[] collider2Ds = GetComponents<Collider2D>();
+        for(int cc = 0; cc < collider2Ds.Length; cc++)
+        {
+            collider2Ds[cc].enabled = false;
+        }
+        base.PreKill();
+    }
 }

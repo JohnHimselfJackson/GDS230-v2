@@ -17,6 +17,7 @@ public class GenericEnemy : MonoBehaviour
     public List<GameObject> drops = new List<GameObject>(); 
     protected int myHealth;
     protected int myArmour;
+    protected float killDelay;
 
     protected float mySpeed;
     protected float returnSpeed;
@@ -64,9 +65,14 @@ public class GenericEnemy : MonoBehaviour
         myHealth -= modifiedDamage;
         if (myHealth <= 0)
         {
-            Kill();
+            PreKill();
         }
     }
+    public virtual void PreKill()
+    {
+        Invoke("Kill", killDelay);
+    }
+
     // kills the enemy
     public void Kill()
     {
