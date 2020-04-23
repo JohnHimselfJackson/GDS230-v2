@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: faba5e831fc2d8e4eaffd7eb6b1111da
+guid: d26365c1bb483fd41bdb8381ea61bb7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3920904192442181997
-    second: Robot Sprite (L) aseprite_0
+      213: -1980183398597891534
+    second: Brute Idle Animation-Sheet_0
   - first:
-      213: -6688151176806261090
-    second: Robot Sprite (L) aseprite_1
+      213: 7261196482821759283
+    second: Brute Idle Animation-Sheet_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -51,9 +51,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 87
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -116,12 +116,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Robot Sprite (L) aseprite_0
+      name: Brute Idle Animation-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
+        width: 176
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24a0040ccde3f8e448655da066dab523
-      internalID: -3920904192442181997
+      spriteID: 29393beef1994904b8ad5dbf59ce9268
+      internalID: -1980183398597891534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot Sprite (L) aseprite_1
+      name: Brute Idle Animation-Sheet_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 176
         y: 0
-        width: 128
+        width: 176
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3485194ef4354d49b44c2e02431bac0
-      internalID: -6688151176806261090
+      spriteID: a408b56996cf3f84e94a08999d308b1c
+      internalID: 7261196482821759283
       vertices: []
       indices: 
       edges: []
