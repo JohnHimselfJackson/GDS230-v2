@@ -119,6 +119,7 @@ public class GruntScript : GenericEnemy
             //if the shooting time is over 1 second and it hasnt started the shooting phase it passes the if below and calls an attack from the enemies weapon
             if (shootingtime > 0.5f && shooting)
             {
+                anim.SetBool("Shooting", true);
                 transform.localScale = new Vector3(0.9f, 1, 1);
                 // sets the variable keeping track of shooting started to false to avoid the weapon doing its shoot function multiple times
                 shooting = false;
@@ -128,6 +129,7 @@ public class GruntScript : GenericEnemy
         // once the shoot time is over 1.5 seconds it resets the variables so that the enemy will enter the follow track and be prepared for next shoot cycle
         else
         {
+            anim.SetBool("Shooting", false);
             transform.localScale = new Vector3(1, 1, 1);
             followtime = 3;
             shootingtime = 0;
@@ -277,7 +279,6 @@ public class GruntScript : GenericEnemy
             }
 
         }
-
     }
     #endregion
 
@@ -422,4 +423,15 @@ public class GruntScript : GenericEnemy
     }
 
     #endregion
+
+    public override void PreKill()
+    {
+        killDelay = 1.167f;
+        Collider2D[] collider2Ds = GetComponents<Collider2D>();
+        for (int cc = 0; cc < collider2Ds.Length; cc++)
+        {
+            collider2Ds[cc].enabled = false;
+        }
+        base.PreKill();
+    }
 }
