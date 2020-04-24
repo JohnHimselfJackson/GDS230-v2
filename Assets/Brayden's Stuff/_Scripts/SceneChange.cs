@@ -19,4 +19,12 @@ public class SceneChange : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("ButtonPressBack");
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
 }
