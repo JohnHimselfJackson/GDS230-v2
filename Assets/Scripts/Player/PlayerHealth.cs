@@ -21,7 +21,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Damage(float damage)
     {
-        if(implant.shieldOn == true)
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+
+        if (implant.shieldOn == true)
         {
             implant.DamageShield(damage);
             return;
@@ -43,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDead()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
         SceneManager.LoadScene(2);
         //Revive animation
         //Opt-in ads

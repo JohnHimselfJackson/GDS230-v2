@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: PlayerJump
     clip: {fileID: 8300000, guid: e0aa5386df9735747ae9fb8677eccfa9, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -64,13 +64,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: GameTheme
     clip: {fileID: 8300000, guid: 4b45948af1d297d4192b4769c56f47c2, type: 3}
-    volume: 0.35
+    volume: 0.45
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MainMenuTheme
     clip: {fileID: 8300000, guid: 4b45948af1d297d4192b4769c56f47c2, type: 3}
-    volume: 0.35
+    volume: 0.45
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -83,6 +83,30 @@ MonoBehaviour:
   - name: GruntShoot
     clip: {fileID: 8300000, guid: 00bdff93925e16a4d8f4ced70620b17e, type: 3}
     volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BruteShoot
+    clip: {fileID: 8300000, guid: 76ad64a1db2ca1042a407a8a5eea2dbb, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BruteDeath
+    clip: {fileID: 8300000, guid: 46f6d85c738ee4c428ba19ad67b67e6c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: bd0aa42aee13c084eb402bc7e6dd6af8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerShoot
+    clip: {fileID: 8300000, guid: 2b2ffa82e78f76b45899d0d6a4408f25, type: 3}
+    volume: 0.35
     pitch: 1
     loop: 0
     source: {fileID: 0}

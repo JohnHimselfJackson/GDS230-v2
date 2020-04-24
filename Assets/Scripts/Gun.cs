@@ -88,6 +88,7 @@ public class Gun : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && Input.mousePosition.x > 1100 && Input.mousePosition.y < 600)
         {
             StartShooting();
+            FindObjectOfType<AudioManager>().Play("PlayerShoot");
         }
         if (Input.GetMouseButtonUp(0) && shooting)
         {
