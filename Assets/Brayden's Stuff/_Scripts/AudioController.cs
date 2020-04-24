@@ -27,14 +27,13 @@ public class AudioController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
     void Update()
     {
         HandleAudio();
         myScene = SceneManager.GetActiveScene();
         myIndex = myScene.buildIndex;
     }
-
+    
     /*Sets the audio to the desired game clip IF it isn't already set depending on which scene you are in.
      Makes the */
     void HandleAudio()
