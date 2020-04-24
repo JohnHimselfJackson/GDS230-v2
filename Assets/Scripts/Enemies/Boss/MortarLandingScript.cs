@@ -30,7 +30,7 @@ public class MortarLandingScript : MonoBehaviour
     IEnumerator Explode()
     {
         GetComponent<Animator>().Play("MortarExplosionAnimation");
-        CheckForPlayer(Physics2D.BoxCastAll(transform.position, new Vector2(0.5f, 0.5f), 0, Vector2.zero));
+        CheckForPlayer(Physics2D.BoxCastAll(transform.position, new Vector2(1.5f, 1.5f), 0, Vector2.zero));
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
@@ -39,7 +39,7 @@ public class MortarLandingScript : MonoBehaviour
     {
         for (int cc = 0; cc < hits.Length; cc++)
         {
-            if (hits[cc].collider.gameObject.CompareTag("Players"))
+            if (hits[cc].collider.gameObject.CompareTag("Player"))
             {
                 hits[cc].collider.gameObject.GetComponent<PlayerHealth>().Damage(5);
             }
@@ -55,20 +55,20 @@ public class MortarLandingScript : MonoBehaviour
         {
             if(hitBreakable.point.y > hitUnbreakable.point.y)
             {
-                transform.position = hitBreakable.point + Vector2.up * 0.25f;
+                transform.position = hitBreakable.point + Vector2.up * 0.5f;
             }
             else
             {
-                transform.position = hitUnbreakable.point + Vector2.up * 0.25f;
+                transform.position = hitUnbreakable.point + Vector2.up * 0.5f;
             }
         }
         else if (hitUnbreakable)
         {
-            transform.position = hitUnbreakable.point + Vector2.up * 0.25f;
+            transform.position = hitUnbreakable.point + Vector2.up * 0.5f;
         }
         else if (hitBreakable)
         {
-            transform.position = hitBreakable.point + Vector2.up * 0.25f;
+            transform.position = hitBreakable.point + Vector2.up * 0.5f;
         }
         else
         {

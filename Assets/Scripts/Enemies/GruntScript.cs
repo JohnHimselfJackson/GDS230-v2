@@ -120,9 +120,9 @@ public class GruntScript : GenericEnemy
             if (shootingtime > 0.5f && shooting)
             {
                 anim.SetBool("Shooting", true);
-                transform.localScale = new Vector3(0.9f, 1, 1);
                 // sets the variable keeping track of shooting started to false to avoid the weapon doing its shoot function multiple times
                 shooting = false;
+                FindObjectOfType<AudioManager>().Play("GruntShoot");
                 shoot();
             }
         }
@@ -130,7 +130,6 @@ public class GruntScript : GenericEnemy
         else
         {
             anim.SetBool("Shooting", false);
-            transform.localScale = new Vector3(1, 1, 1);
             followtime = 3;
             shootingtime = 0;
             shooting = true;
@@ -144,14 +143,14 @@ public class GruntScript : GenericEnemy
         //initially the direction of the enemy is checked to ensure that it is facing the player before it begins moving towards them
         CheckFacing();
         //Next it checks that the bot can move left, that the player is to the left and that the player is not in the minimum range
-        if (CheckWalk("Left") && transform.position.x > target.transform.position.x && (target.transform.position.x - transform.position.x) < -1.5f)
+        if (CheckWalk("Left") && transform.position.x > target.transform.position.x && (target.transform.position.x - transform.position.x) < -3f)
         {
             //the enemy will move left assuming that the above was correct via translate at the speed of its global speed
             anim.SetBool("Walking", true);
             transform.Translate(-transform.right * mySpeed * Time.deltaTime, Space.Self);
         }
         //checks that the bot can move right, that the player is to the right and that the player is not in the minimum range
-        else if (CheckWalk("Right") && transform.position.x < target.transform.position.x && (target.transform.position.x - transform.position.x) > 1.5f)
+        else if (CheckWalk("Right") && transform.position.x < target.transform.position.x && (target.transform.position.x - transform.position.x) > 3f)
         {
             //the enemy will move right assuming that the above was correct via translate at the speed of its global speed
             anim.SetBool("Walking", true);
@@ -183,7 +182,7 @@ public class GruntScript : GenericEnemy
                     transform.Translate(transform.right * mySpeed * Time.deltaTime, Space.Self);
                 }
             }
-            else if(!movingLeft && BoxCastForBarrier(transform.position + new Vector3(0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
+            else if(!movingLeft && BoxCastForBarrier(transform.position + new Vector3(0.8f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
             {
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -222,7 +221,7 @@ public class GruntScript : GenericEnemy
                     transform.Translate(-transform.right * mySpeed * Time.deltaTime, Space.Self);
                 }
             }
-            else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
+            else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-0.8f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier"))
             {
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0,180, 0);
@@ -333,19 +332,19 @@ public class GruntScript : GenericEnemy
         if(direction == "Right")
         {
             //raycasts down for floor info
-            rightHitGround = Physics2D.RaycastAll(transform.position + new Vector3(0.15f, -0.46f, 0), Vector3.down, 0.2f);
+            rightHitGround = Physics2D.RaycastAll(transform.position + new Vector3(0.15f, -0.9f, 0), Vector3.down, 0.2f);
             //returns a bool based on if there is ground beneath is and if there nothing infront
-            returnThis = GroundCastHitBarrier(rightHitGround) && !BoxCastForBarrier(transform.position + new Vector3(0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
+            returnThis = GroundCastHitBarrier(rightHitGround) && !BoxCastForBarrier(transform.position + new Vector3(0.8f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
         }
         //if told to check right
         else if (direction == "Left")
         {
             //raycasts down for floor info
-            leftHitGround = Physics2D.RaycastAll(transform.position + new Vector3(-0.15f, -0.46f, 0), Vector3.down, 0.2f);
+            leftHitGround = Physics2D.RaycastAll(transform.position + new Vector3(-0.15f, -0.9f, 0), Vector3.down, 0.2f);
             //returns a bool based on if there is ground beneath is and if there nothing infront
             if (leftHitGround.Length > 0)
             {
-                returnThis = GroundCastHitBarrier(leftHitGround) && !BoxCastForBarrier(transform.position + new Vector3(-0.4f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
+                returnThis = GroundCastHitBarrier(leftHitGround) && !BoxCastForBarrier(transform.position + new Vector3(-0.8f, 0, 0), new Vector3(0.05f, 0.6f, 0), "Barrier");
             }
         }
         //in the case a valid dirrection was not good
@@ -426,7 +425,11 @@ public class GruntScript : GenericEnemy
 
     public override void PreKill()
     {
-        killDelay = 1.167f;
+        anim.SetBool("Dying", true);
+        FindObjectOfType<AudioManager>().Play("GruntDeath");
+        killDelay = 1.167f/2;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         Collider2D[] collider2Ds = GetComponents<Collider2D>();
         for (int cc = 0; cc < collider2Ds.Length; cc++)
         {

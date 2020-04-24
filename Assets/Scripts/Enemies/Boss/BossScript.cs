@@ -45,7 +45,7 @@ public class BossScript : MonoBehaviour
 
     float initiatingTime = 4;
     float attackWaitTime = 0;
-    int myHealth = 1000;
+    int myHealth = 99;
     int myArmour = 1;
     int stage = 0;
     public List<GameObject> drops = new List<GameObject>();
@@ -64,6 +64,7 @@ public class BossScript : MonoBehaviour
             case 0:
                 if (player.transform.position.x > bossAreaStart.x)
                 {
+                    print("test");
                     stage = 1;
                 }
                 break;
@@ -102,34 +103,34 @@ public class BossScript : MonoBehaviour
         {
             myHealth -= modifiedDamage;
         }
-        if (myHealth < 0 && stage < 5)
+        if (myHealth < 0)
         {
             stage = 5;
             initiating = true;
             immune = true;
         }
-        else if(myHealth < 250 && stage < 4)
-        {
-            //add missile stage here
-            stage = 5;
-            GetComponent<SpriteRenderer>().color = Color.magenta;
-            initiating = true;
-            immune = true;
-        }
-        else if(myHealth < 500 && stage < 3)
-        {
-            stage = 3;
-            GetComponent<SpriteRenderer>().color = Color.red;
-            initiating = true;
-            immune = true;
-        }
-        else if(myHealth < 750 && stage < 2)
-        {
-            stage = 2;
-            GetComponent<SpriteRenderer>().color = Color.yellow;
-            initiating = true;
-            immune = true;
-        }
+        //else if(myHealth < -100 && stage < 4)
+        //{
+        //    //add missile stage here
+        //    stage = 5;
+        //    GetComponent<SpriteRenderer>().color = Color.magenta;
+        //    initiating = true;
+        //    immune = true;
+        //}
+        //else if(myHealth < -100 && stage < 3)
+        //{
+        //    stage = 3;
+        //    GetComponent<SpriteRenderer>().color = Color.red;
+        //    initiating = true;
+        //    immune = true;
+        //}
+        //else if(myHealth < 0 && stage < 2)
+        //{
+        //    stage = 5;
+        //    GetComponent<SpriteRenderer>().color = Color.yellow;
+        //    initiating = true;
+        //    immune = true;
+        //}
     }
 
     #region Stages
@@ -256,14 +257,14 @@ public class BossScript : MonoBehaviour
             print("Error expected as boss zone is too small");
         }
         float safeZoneX = Random.Range(0f, positionRange);
-        for (int mm = 0; mm <= 6; mm++)
+        for (int mm = 0; mm <= 8; mm++)
         {
             if (mm < 0)
             {
                 mm = 0;
             }
             float potentialLandingLocation = Random.Range(bossAreaStart.x, bossAreaPlayerLimit.x);
-            print(potentialLandingLocation);
+            //print(potentialLandingLocation);
             if (potentialLandingLocation > safeZoneX - playerWidth && potentialLandingLocation < safeZoneX + playerWidth)
             {
                 mm--;
@@ -275,9 +276,9 @@ public class BossScript : MonoBehaviour
             }
         }
 
-        for (int mm = 0; mm <= 6; mm++)
+        for (int mm = 0; mm <= 8; mm++)
         {
-            Instantiate<GameObject>(mortarShot, new Vector3(mortarXs[mm], 0, 0), Quaternion.identity);
+            Instantiate<GameObject>(mortarShot, new Vector3(mortarXs[mm], 55,0), Quaternion.identity);
         }
 
         //shoot dumby shots
@@ -360,21 +361,21 @@ public class BossScript : MonoBehaviour
 
     public void DropCoin()
     {
-        GameObject drop = Instantiate<GameObject>(drops[0], transform.position + (Vector3.up * 0.5f) -(Vector3.forward * 3f), Quaternion.identity);
+        GameObject drop = Instantiate<GameObject>(drops[0], transform.position + (Vector3.up * 0.5f) -(Vector3.forward * 3f) - (Vector3.right * 3f), Quaternion.identity);
         drop.GetComponent<CoinScript>().dataHolder = holder;
         drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 4f, ForceMode2D.Impulse);
     }
 
     public void DropWeapon()
     {
-        GameObject drop = Instantiate<GameObject>(drops[Random.Range(1,3)], transform.position + (Vector3.up * 0.5f) - (Vector3.forward * 3f), Quaternion.identity);
+        GameObject drop = Instantiate<GameObject>(drops[Random.Range(1,3)], transform.position + (Vector3.up * 0.5f) - (Vector3.forward * 3f) - (Vector3.right * 3f), Quaternion.identity);
         drop.GetComponent<GenericWeaponPickup>().dataHolder = holder;
         drop.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)) * 2f, ForceMode2D.Impulse);
     }
 
     void ToPostGameScreen()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(2);
     }
     
     void DelayCancelCoinInvoke()
@@ -393,7 +394,7 @@ public class BossScript : MonoBehaviour
             case 2:
             case 3:
             case 4:
-                healthTB.text = myHealth.ToString() + "/ 1000";
+                healthTB.text = myHealth.ToString() + "/ 100";
                 if (immune)
                 {
                     healthTB.color = Color.blue;
@@ -404,7 +405,7 @@ public class BossScript : MonoBehaviour
                 }
                 break;
             case 5:
-                healthTB.text = "0 / 1000";
+                healthTB.text = "0 / 100";
                 healthTB.color = Color.red;
                 break;
         }

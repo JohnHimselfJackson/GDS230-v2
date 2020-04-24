@@ -18,6 +18,10 @@ public class GenericPlayerWeapon : MonoBehaviour
 
     float timeToFire = 0;
 
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         timeToFire -= Time.deltaTime;
@@ -66,7 +70,6 @@ public class GenericPlayerWeapon : MonoBehaviour
 
     void Shoot()
     {
-        print("test 2");
         GameObject newProjectile = Instantiate(projectile, firePosition.position, firePosition.rotation);
         newProjectile.GetComponent<PlayerBullet>().SetBulletValues((int)damage, projectileSpeed, projectileSizeMulti);
         //Player.Ammo - ammoPerShot;

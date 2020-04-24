@@ -10,14 +10,18 @@ public class PlayerBullet : MonoBehaviour
     public int damage;
 
     void OnCollisionEnter2D(Collision2D hitInfo)
-    {
+    { 
+
+        print("hit something");
         GameObject gOHit = hitInfo.gameObject;
+        print(gOHit.name);
         if (gOHit.CompareTag("Enemy"))
         {
-            gOHit.GetComponent<GenericEnemy>().DealDamage(damage);
+            gOHit.GetComponent<GenericEnemy>().PreKill();
         }
         if (gOHit.CompareTag("Boss"))
         {
+            print("hit boss");
             gOHit.GetComponent<BossScript>().DamageBoss(damage);
         }
         Destroy(gameObject);

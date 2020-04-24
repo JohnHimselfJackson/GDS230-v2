@@ -98,14 +98,18 @@ public class InventoryController : MonoBehaviour
     public int FindNumberOfWeapons()
     {
         int returnThis = 0;
-        for(int ww = 0; ww < 16; ww++)
+        if (playerWeapons != null)
         {
-            if (playerWeapons[ww] != null)
+            for (int ww = 0; ww < 16; ww++)
             {
-                if (playerWeapons[ww].fireRate != 0)
+                if (playerWeapons[ww] != null)
                 {
-                    returnThis++;
+                    if (playerWeapons[ww].fireRate != 0)
+                    {
+                        returnThis++;
+                    }
                 }
+
             }
         }
         return returnThis;

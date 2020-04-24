@@ -16,7 +16,6 @@ public class PlayerAppearance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myCustomPrefs = GetComponent<CustomizerPrefs>();
     }
 
     // Update is called once per frame
@@ -32,40 +31,43 @@ public class PlayerAppearance : MonoBehaviour
 
     void CheckHair()
     {
-        if (myCustomPrefs.b == 0)
+        if(myCustomPrefs.b != null)
         {
-            myHair[0].SetActive(true);
-        }
-        else 
-        {
-            myHair[0].SetActive(false);
-        }
+            if (myCustomPrefs.b == 0)
+            {
+                myHair[0].SetActive(true);
+            }
+            else
+            {
+                myHair[0].SetActive(false);
+            }
 
-        if (myCustomPrefs.b == 1)
-        {
-            myHair[1].SetActive(true);
-        }
-        else
-        {
-            myHair[1].SetActive(false);
-        }
+            if (myCustomPrefs.b == 1)
+            {
+                myHair[1].SetActive(true);
+            }
+            else
+            {
+                myHair[1].SetActive(false);
+            }
 
-        if (myCustomPrefs.b == 2)
-        {
-            myHair[2].SetActive(true);
-        }
-        else
-        {
-            myHair[2].SetActive(false);
-        }
+            if (myCustomPrefs.b == 2)
+            {
+                myHair[2].SetActive(true);
+            }
+            else
+            {
+                myHair[2].SetActive(false);
+            }
 
-        if (myCustomPrefs.b == 3)
-        {
-            myHair[3].SetActive(true);
-        }
-        else
-        {
-            myHair[3].SetActive(false);
+            if (myCustomPrefs.b == 3)
+            {
+                myHair[3].SetActive(true);
+            }
+            else
+            {
+                myHair[3].SetActive(false);
+            }
         }
     }
 

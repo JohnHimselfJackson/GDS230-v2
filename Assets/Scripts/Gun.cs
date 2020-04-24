@@ -59,9 +59,22 @@ public class Gun : MonoBehaviour
             weaponReference.projectile = bulletPrefab;
         }
         weaponReference.firePosition = muzzle;
+
+
+        weaponReference.projectile = bulletPrefab;
+        weaponReference.damage = 5;
     }
 
+    private void Start()
+    {
+        weaponReference.firePosition = muzzle;
+        weaponReference.projectile = bulletPrefab;
+        weaponReference.damage = 5;
+        weaponReference.fireRate = 2;
+        weaponReference.projectileSizeMulti = 1;
+        weaponReference.projectileSpeed = 20;
 
+    }
 
 
     void Update()
@@ -70,6 +83,15 @@ public class Gun : MonoBehaviour
         if (shooting)
         {
             weaponReference.CallToShoot();
+        }
+
+        if(Input.GetMouseButtonDown(0) && Input.mousePosition.x > 1100 && Input.mousePosition.y < 600)
+        {
+            StartShooting();
+        }
+        if (Input.GetMouseButtonUp(0) && shooting)
+        {
+            StopShooting();
         }
     }
 

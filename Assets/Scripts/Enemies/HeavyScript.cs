@@ -180,7 +180,7 @@ public class HeavyScript : GenericEnemy
                     transform.Translate(transform.right * mySpeed * Time.deltaTime, Space.Self);
                 }
             }
-            else if (!movingLeft && BoxCastForBarrier(transform.position + new Vector3(0.6f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier"))
+            else if (!movingLeft && BoxCastForBarrier(transform.position + new Vector3(1.8f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier"))
             {
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -219,7 +219,7 @@ public class HeavyScript : GenericEnemy
                     transform.Translate(-transform.right * mySpeed * Time.deltaTime, Space.Self);
                 }
             }
-            else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-0.6f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier"))
+            else if (movingLeft && BoxCastForBarrier(transform.position + new Vector3(-1.8f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier"))
             {
                 // this changes the way that the bot faces and allows them to turn and face while also adding to the patrol end counter
                 transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -331,19 +331,19 @@ public class HeavyScript : GenericEnemy
         if (direction == "Right")
         {
             //raycasts down for floor info
-            rightHitGround = Physics2D.RaycastAll(transform.position + new Vector3(0.4f, -0.7f, 0), Vector3.down, 0.2f);
+            rightHitGround = Physics2D.RaycastAll(transform.position + new Vector3(0f, -1f, 0), Vector3.down, 0.2f);
             //returns a bool based on if there is ground beneath is and if there nothing infront
-            returnThis = GroundCastHitBarrier(rightHitGround) && !BoxCastForBarrier(transform.position + new Vector3(0.6f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier");
+            returnThis = GroundCastHitBarrier(rightHitGround) && !BoxCastForBarrier(transform.position + new Vector3(1.8f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier");
         }
         //if told to check right
         else if (direction == "Left")
         {
             //raycasts down for floor info
-            leftHitGround = Physics2D.RaycastAll(transform.position + new Vector3(-0.4f, -0.7f, 0), Vector3.down, 0.2f);
+            leftHitGround = Physics2D.RaycastAll(transform.position + new Vector3(-1.6f, -1f, 0), Vector3.down, 0.2f);
             //returns a bool based on if there is ground beneath is and if there nothing infront
             if (leftHitGround.Length > 0)
             {
-                returnThis = GroundCastHitBarrier(leftHitGround) && !BoxCastForBarrier(transform.position + new Vector3(-0.6f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier");
+                returnThis = GroundCastHitBarrier(leftHitGround) && !BoxCastForBarrier(transform.position + new Vector3(-1.8f, 0, 0), new Vector3(0.1f, 1f, 0), "Barrier");
             }
         }
         //in the case a valid dirrection was not good
@@ -420,6 +420,7 @@ public class HeavyScript : GenericEnemy
 
     public override void PreKill()
     {
+
         killDelay = 1.25f;
         Collider2D[] collider2Ds = GetComponents<Collider2D>();
         for(int cc = 0; cc < collider2Ds.Length; cc++)

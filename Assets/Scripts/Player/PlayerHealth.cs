@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDead()
     {
+        SceneManager.LoadScene(2);
         //Revive animation
         //Opt-in ads
         //End game menu

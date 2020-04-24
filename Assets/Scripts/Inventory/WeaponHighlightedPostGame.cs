@@ -140,7 +140,7 @@ public class WeaponHighlightedPostGame : SelectionManagerLink
             pgdl.gameData.bossWeapon = null;
             if (pgdl.gameData.GetComponent<GenericPlayerWeapon>() != null)
             {
-                Destroy(pgdl.gameData.GetComponent<GenericPlayerWeapon>());
+                //Destroy(pgdl.gameData.GetComponent<GenericPlayerWeapon>());
             }
             pgdl.weaponNameTB.text = null;
             pgdl.weaponButton.gameObject.SetActive(false);
