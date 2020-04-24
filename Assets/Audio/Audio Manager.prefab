@@ -64,13 +64,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: GameTheme
     clip: {fileID: 8300000, guid: 4b45948af1d297d4192b4769c56f47c2, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MainMenuTheme
     clip: {fileID: 8300000, guid: 4b45948af1d297d4192b4769c56f47c2, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: GruntDeath
+    clip: {fileID: 8300000, guid: f32ad49cfb3c33c439c0f62c3148e794, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GruntShoot
+    clip: {fileID: 8300000, guid: 00bdff93925e16a4d8f4ced70620b17e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
