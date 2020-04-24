@@ -121,6 +121,7 @@ public class HeavyScript : GenericEnemy
             if (shootingtime > 1 && shooting)
             {
                 // sets the variable keeping track of shooting started to false to avoid the weapon doing its shoot function multiple times
+                FindObjectOfType<AudioManager>().Play("BruteShoot");
                 anim.SetBool("shooting", true);
                 shooting = false;
                 shoot();
@@ -420,10 +421,13 @@ public class HeavyScript : GenericEnemy
 
     public override void PreKill()
     {
-
-        killDelay = 1.25f;
+        anim.SetBool("dead", true);
+        FindObjectOfType<AudioManager>().Play("BruteDeath");
+        killDelay = 1.167f / 2;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         Collider2D[] collider2Ds = GetComponents<Collider2D>();
-        for(int cc = 0; cc < collider2Ds.Length; cc++)
+        for (int cc = 0; cc < collider2Ds.Length; cc++)
         {
             collider2Ds[cc].enabled = false;
         }
