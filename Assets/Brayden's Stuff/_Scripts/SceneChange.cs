@@ -9,4 +9,14 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene(i);
     }
+
+    public void PlayButtonPressSound()
+    {
+        FindObjectOfType<AudioManager>().Play("ButtonPress");
+    }
+
+    public void PlayButtonPressBackSound()
+    {
+        FindObjectOfType<AudioManager>().Play("ButtonPressBack");
+    }
 }
