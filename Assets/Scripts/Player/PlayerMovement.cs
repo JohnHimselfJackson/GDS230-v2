@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (verticalMove >= .5f)
         {
             jump = true;
+            FindObjectOfType<AudioManager>().Play("PlayerJump");
         }
     }
 
