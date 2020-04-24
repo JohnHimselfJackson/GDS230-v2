@@ -33,11 +33,6 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("Theme");
-    }
-
-    void Update()
-    {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ActualLevel"))
         {
             Play("GameTheme");
@@ -53,6 +48,7 @@ public class AudioManager : MonoBehaviour
             Play("MainMenuTheme");
         }
     }
+
 
     public void Play(string name)
     {
