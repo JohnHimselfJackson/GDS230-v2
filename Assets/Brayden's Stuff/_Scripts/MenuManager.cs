@@ -6,7 +6,6 @@ public class MenuManager : MonoBehaviour
 {
     //A reference to our current menu & sub menu.
     public Menu currentMenu;
-    public Menu currentSubMenu;
 
     //A reference to our play states.
     public playState playStates;
@@ -21,7 +20,6 @@ public class MenuManager : MonoBehaviour
     public void Start()
     {
         ShowMenu(currentMenu);
-        ShowSubMenu(currentSubMenu);
     }
 
     private void Update()
@@ -62,17 +60,6 @@ public class MenuManager : MonoBehaviour
 
         currentMenu = menu;
         currentMenu.IsOpen = true;
-
-    }
-
-    //Handles which sub menu is our current sub menu depending on our selection.
-    public void ShowSubMenu(Menu subMenu)
-    {
-        if (currentSubMenu != null)
-            currentSubMenu.IsOpen = false;
-
-        currentSubMenu = subMenu;
-        currentSubMenu.IsOpen = true;
 
     }
 }

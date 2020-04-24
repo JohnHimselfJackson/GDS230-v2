@@ -89,9 +89,7 @@ public class StoreManagement : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(armOneSold);
         CheckPrefs();
-        Debug.Log(armOneSold);
     }
 
     void Update()

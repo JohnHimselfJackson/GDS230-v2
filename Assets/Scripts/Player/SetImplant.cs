@@ -4,20 +4,36 @@ using UnityEngine;
 
 public class SetImplant : MonoBehaviour
 {
-    public ImplantAbility myImplant;
-    // Start is called before the first frame update
+
+    public static int dash;
+    public static int shield;
+
     void Start()
     {
-        myImplant = GetComponent<ImplantAbility>();
+        CheckPrefs();
+    }
+
+    void CheckPrefs()
+    {
+        dash = PlayerPrefs.GetInt("Dash");
+        shield = PlayerPrefs.GetInt("Shield");
+        Debug.Log("Dash is " + dash);
+        Debug.Log("Shield is " + shield);
     }
 
     public void SetDash()
     {
-        myImplant.implant = ImplantAbility.Implant.BioticDash;
+        PlayerPrefs.SetInt("Dash", 1);
+        PlayerPrefs.SetInt("Shield", 0);
+        Debug.Log("Dash is " + dash);
+        Debug.Log("Shield is " + shield);
     }
 
     public void SetShield()
     {
-        myImplant.implant = ImplantAbility.Implant.Shield;
+        PlayerPrefs.SetInt("Shield", 1);
+        PlayerPrefs.SetInt("Dash", 0);
+        Debug.Log("Dash is " + dash);
+        Debug.Log("Shield is " + shield);
     }
 }

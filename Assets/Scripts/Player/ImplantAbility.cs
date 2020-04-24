@@ -48,8 +48,23 @@ public class ImplantAbility : MonoBehaviour
         shieldObj.SetActive(false);
         curShieldHealth = maxShieldHealth;
         #endregion
-
+        CheckPrefs();
         //implant = Implant.BioticDash;
+    }
+
+    void CheckPrefs()
+    {
+        PlayerPrefs.GetInt("Dash");
+        PlayerPrefs.GetInt("Shield");
+
+        if (SetImplant.dash == 1)
+        {
+            implant = Implant.BioticDash;
+        }
+        else if(SetImplant.shield == 1)
+        {
+            implant = Implant.Shield;
+        }
     }
 
     void Update()

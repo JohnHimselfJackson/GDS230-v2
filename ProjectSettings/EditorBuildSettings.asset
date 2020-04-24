@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Brayden's Stuff/Scenes/Brayden's TestScenes/MainGame.unity
     guid: e6e94f10c9de6c748aede5b4c66c7d77
+  - enabled: 1
+    path: Assets/Brayden's Stuff/Scenes/Brayden's TestScenes/MainMenu.unity
+    guid: a64d8201d63e34d4d81049fe32c70251
+  - enabled: 1
+    path: Assets/Scenes/ActualLevel.unity
+    guid: db10237420567ee4ca860e8eeacbf7c3
+  - enabled: 1
+    path: Assets/Scenes/PostGame.unity
+    guid: 4255438530bc6f6408c59a1ed22b5dcf
   m_configObjects: {}
