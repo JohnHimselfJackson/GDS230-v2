@@ -27,7 +27,7 @@ TagManager:
   - Unbreakable
   - TextBlock
   - Text
-  - 
+  - Particle
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Credits
     uniqueID: 1850893995
+    locked: 0
+  - name: Particles
+    uniqueID: 3327692883
     locked: 0
   - name: Default
     uniqueID: 0
