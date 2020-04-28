@@ -41,7 +41,7 @@ public class MortarLandingScript : MonoBehaviour
         {
             if (hits[cc].collider.gameObject.CompareTag("Player"))
             {
-                hits[cc].collider.gameObject.GetComponent<PlayerHealth>().Damage(5);
+                hits[cc].collider.gameObject.GetComponent<PlayerHealth>().Damage(15);
             }
         }        
     }

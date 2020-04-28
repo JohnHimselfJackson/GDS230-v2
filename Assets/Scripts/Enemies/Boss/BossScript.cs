@@ -140,7 +140,8 @@ public class BossScript : MonoBehaviour
         }
         else
         {
-            if(attackWaitTime < 0)
+            GetComponent<SpriteRenderer>().color = Color.white;
+            if (attackWaitTime < 0)
             {
                 Mortar();
                 attackWaitTime = 5;
@@ -165,10 +166,11 @@ public class BossScript : MonoBehaviour
         }
         else
         {
+            GetComponent<SpriteRenderer>().color = Color.white;
             if (attackWaitTime < 0)
             {
                 MiniGun();
-                attackWaitTime = 8.5f;
+                attackWaitTime = 6.5f;
             }
             else
             {
@@ -190,6 +192,7 @@ public class BossScript : MonoBehaviour
         }
         else
         {
+            GetComponent<SpriteRenderer>().color = Color.white;
             if (attackWaitTime < 0)
             {
                 attackWaitTime = 3;

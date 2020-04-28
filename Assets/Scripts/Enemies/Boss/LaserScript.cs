@@ -29,7 +29,7 @@ public class LaserScript : MonoBehaviour
         {
             if (gOHit.CompareTag("Player"))
             {
-                gOHit.GetComponent<PlayerHealth>().Damage(Time.deltaTime * 4);
+                gOHit.GetComponent<PlayerHealth>().Damage(Time.deltaTime * 50);
             }
         }
     }
