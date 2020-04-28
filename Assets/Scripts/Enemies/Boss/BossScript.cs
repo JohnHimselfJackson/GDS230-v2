@@ -28,6 +28,8 @@ public class BossScript : MonoBehaviour
     public LayerMask unbreakable;
     public LayerMask breakable;
 
+    public Transform minigunShootPoint;
+
     float playerWidth = 0.6f;
 
     bool immune = true;
@@ -39,13 +41,13 @@ public class BossScript : MonoBehaviour
 
     int shotArc = 30;
     int numberOfShots = 35;
-    float timeBetweenShots = 0.05f;
-    float bulletSpeed = 100f;
+    float timeBetweenShots = 0.08f;
+    float bulletSpeed = 500f;
     public Vector3 startDisplacement;
 
     float initiatingTime = 4;
     float attackWaitTime = 0;
-    int myHealth = 99;
+    int myHealth = 300;
     int myArmour = 1;
     int stage = 0;
     public List<GameObject> drops = new List<GameObject>();
@@ -64,7 +66,6 @@ public class BossScript : MonoBehaviour
             case 0:
                 if (player.transform.position.x > bossAreaStart.x)
                 {
-                    print("test");
                     stage = 1;
                 }
                 break;
@@ -76,9 +77,6 @@ public class BossScript : MonoBehaviour
                 break;
             case 3:
                 StageThree();
-                break;
-            case 4:
-                StageFour();
                 break;
             case 5:
                 if (!deathStarted)
@@ -103,34 +101,28 @@ public class BossScript : MonoBehaviour
         {
             myHealth -= modifiedDamage;
         }
-        if (myHealth < 0)
+        if (myHealth <= 0)
         {
             stage = 5;
             initiating = true;
             immune = true;
+            GetComponent<SpriteRenderer>().color = Color.red;
+
         }
-        //else if(myHealth < -100 && stage < 4)
-        //{
-        //    //add missile stage here
-        //    stage = 5;
-        //    GetComponent<SpriteRenderer>().color = Color.magenta;
-        //    initiating = true;
-        //    immune = true;
-        //}
-        //else if(myHealth < -100 && stage < 3)
-        //{
-        //    stage = 3;
-        //    GetComponent<SpriteRenderer>().color = Color.red;
-        //    initiating = true;
-        //    immune = true;
-        //}
-        //else if(myHealth < 0 && stage < 2)
-        //{
-        //    stage = 5;
-        //    GetComponent<SpriteRenderer>().color = Color.yellow;
-        //    initiating = true;
-        //    immune = true;
-        //}
+        else if (myHealth <= 100 && stage < 3)
+        {
+            stage = 3;
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            initiating = true;
+            immune = true;
+        }
+        else if (myHealth <= 200 && stage < 2)
+        {
+            stage = 2;
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            initiating = true;
+            immune = true;
+        }
     }
 
     #region Stages
@@ -176,7 +168,7 @@ public class BossScript : MonoBehaviour
             if (attackWaitTime < 0)
             {
                 MiniGun();
-                attackWaitTime = 6;
+                attackWaitTime = 8.5f;
             }
             else
             {
@@ -200,33 +192,8 @@ public class BossScript : MonoBehaviour
         {
             if (attackWaitTime < 0)
             {
-                Laser();
                 attackWaitTime = 3;
-            }
-            else
-            {
-                attackWaitTime -= Time.deltaTime;
-            }
-        }
-    }
-    void StageFour()
-    {
-        if (initiating)
-        {
-            initiatingTime -= Time.deltaTime;
-            if (initiatingTime < 0)
-            {
-                initiating = false;
-                immune = false;
-                initiatingTime = 5;
-            }
-        }
-        else
-        {
-            if (attackWaitTime < 0)
-            {
-                Missles();
-                attackWaitTime = 10;
+                Laser();
             }
             else
             {
@@ -238,7 +205,6 @@ public class BossScript : MonoBehaviour
     {
         deathStarted = true;
         print("yeah good");
-        GetComponent<SpriteRenderer>().color = Color.blue;
         InvokeRepeating("DropCoin", 0.2f, 0.4f);
         Invoke("DropWeapon", 5f);
         Invoke("DelayCancelCoinInvoke", 8f);
@@ -278,7 +244,7 @@ public class BossScript : MonoBehaviour
 
         for (int mm = 0; mm <= 8; mm++)
         {
-            Instantiate<GameObject>(mortarShot, new Vector3(mortarXs[mm], 55,0), Quaternion.identity);
+            Instantiate<GameObject>(mortarShot, new Vector3(mortarXs[mm], 49,0), Quaternion.identity);
         }
 
         //shoot dumby shots
@@ -293,12 +259,18 @@ public class BossScript : MonoBehaviour
             Invoke("CreateBullet", timeBetweenShots * ss);
         }
     }
+    void CreateBullet()
+    {
+        // determine rotation of bullet and the direction
+        print(minigunShootPoint);
+        GameObject bullet = Instantiate(projectile, minigunShootPoint.position, minigunShootPoint.rotation * Quaternion.Euler(new Vector3(0, 0, Random.Range(-shotArc / 2, shotArc / 2))));
+        bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * bulletSpeed);
+        bullet.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+    }
+
     void Laser()
     {
-        RaycastHit2D hitUnbreakable = Physics2D.Raycast(transform.position, Vector2.down, 10, unbreakable);
-        RaycastHit2D hitBreakable = Physics2D.Raycast(transform.position, Vector2.down, 10, breakable);
 
-        bool scanningRight = false;
         Vector3 toStart = laserScanStart - laserStartPoint;
         Vector3 toEnd = laserScanEnd - laserStartPoint;
         Vector3 hitPoint = new Vector3();
@@ -310,10 +282,9 @@ public class BossScript : MonoBehaviour
 
         RaycastHit2D initialHitBreakable = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))), breakable);
         RaycastHit2D initialHitUnbreakable = Physics2D.Raycast(laserStartPoint, new Vector2(Mathf.Cos(Mathf.Deg2Rad * (startingAngle - 90)), Mathf.Sin(Mathf.Deg2Rad * (startingAngle - 90))), unbreakable);
-
-        if (hitUnbreakable && hitBreakable)
+        if (initialHitUnbreakable && initialHitBreakable)
         {
-            if (hitBreakable.point.y > hitUnbreakable.point.y)
+            if (initialHitBreakable.point.y > initialHitUnbreakable.point.y)
             {
                 hitPoint = initialHitBreakable.point;
             }
@@ -322,11 +293,11 @@ public class BossScript : MonoBehaviour
                 hitPoint = initialHitUnbreakable.point;
             }
         }
-        else if (hitUnbreakable)
+        else if (initialHitUnbreakable)
         {
             hitPoint = initialHitUnbreakable.point;
         }
-        else if (hitBreakable)
+        else if (initialHitUnbreakable)
         {
             hitPoint = initialHitBreakable.point;
         }
@@ -337,9 +308,9 @@ public class BossScript : MonoBehaviour
             Vector3 laserMidPoint = (hitPoint + laserStartPoint) / 2;
 
             bossLaser = Instantiate(laserInstance, laserMidPoint, Quaternion.Euler(0, 0, startingAngle));
-            bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(0.3f, laserLength);
+            bossLaser.GetComponent<SpriteRenderer>().size = new Vector2(.8f, laserLength);
             bossLaser.GetComponent<SpriteRenderer>().drawMode = SpriteDrawMode.Tiled;
-            bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(0.3f, laserLength);
+            bossLaser.GetComponent<LaserScript>().laserDimensions = new Vector2(.8f, laserLength);
             bossLaser.transform.localScale = new Vector3(1, 1, 1);
         }
 
@@ -347,10 +318,6 @@ public class BossScript : MonoBehaviour
         //gets distance and makes lase thing out of parts to the point
         //gradually changes angle giving a scanning laser effect
         //does laser things
-    }
-    void Missles()
-    {
-        //does missile things
     }
 
 

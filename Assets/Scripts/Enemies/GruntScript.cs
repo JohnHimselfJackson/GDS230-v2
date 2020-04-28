@@ -253,7 +253,6 @@ public class GruntScript : GenericEnemy
             {
                 //moves patrolsdone off 2 so this doesnt run again
                 patrolsDone++;
-                print("ending patrol");
                 //invokes the patrolling over function after a random amount of time
                 Invoke("PatrollingOver", Random.Range(2f, 4.5f));
             }

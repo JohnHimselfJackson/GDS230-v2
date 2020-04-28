@@ -421,6 +421,7 @@ public class HeavyScript : GenericEnemy
 
     public override void PreKill()
     {
+        print("running heavy prekill");
         anim.SetBool("dead", true);
         FindObjectOfType<AudioManager>().Play("BruteDeath");
         killDelay = 1.167f / 2;

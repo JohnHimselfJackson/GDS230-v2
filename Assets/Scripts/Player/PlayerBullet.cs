@@ -11,10 +11,7 @@ public class PlayerBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D hitInfo)
     { 
-
-        print("hit something");
         GameObject gOHit = hitInfo.gameObject;
-        print(gOHit.name);
         if (gOHit.CompareTag("Enemy"))
         {
             gOHit.GetComponent<GenericEnemy>().PreKill();

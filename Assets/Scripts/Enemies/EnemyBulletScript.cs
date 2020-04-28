@@ -6,11 +6,12 @@ public class EnemyBulletScript : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 8f);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        print("hit " + collision.gameObject.name);
         GameObject GO = collision.gameObject;
         if (GO.CompareTag("Player"))
         {

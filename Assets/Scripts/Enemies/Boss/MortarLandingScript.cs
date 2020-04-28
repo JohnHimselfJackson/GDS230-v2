@@ -50,25 +50,24 @@ public class MortarLandingScript : MonoBehaviour
     {
         RaycastHit2D hitUnbreakable = Physics2D.Raycast(transform.position, Vector2.down, 10, unbreakable);
         RaycastHit2D hitBreakable = Physics2D.Raycast(transform.position, Vector2.down, 10, breakable);
-
         if (hitUnbreakable && hitBreakable)
         {
             if(hitBreakable.point.y > hitUnbreakable.point.y)
             {
-                transform.position = hitBreakable.point + Vector2.up * 0.5f;
+                transform.position = hitBreakable.point + Vector2.up * 0.65f;
             }
             else
             {
-                transform.position = hitUnbreakable.point + Vector2.up * 0.5f;
+                transform.position = hitUnbreakable.point + Vector2.up * 0.65f;
             }
         }
         else if (hitUnbreakable)
         {
-            transform.position = hitUnbreakable.point + Vector2.up * 0.5f;
+            transform.position = hitUnbreakable.point + Vector2.up * 0.65f;
         }
         else if (hitBreakable)
         {
-            transform.position = hitBreakable.point + Vector2.up * 0.5f;
+            transform.position = hitBreakable.point + Vector2.up * 0.65f;
         }
         else
         {
