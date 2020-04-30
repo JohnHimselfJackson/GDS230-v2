@@ -25,6 +25,7 @@ public class SetImplant : MonoBehaviour
     {
         PlayerPrefs.SetInt("Dash", 1);
         PlayerPrefs.SetInt("Shield", 0);
+        CheckPrefs();
         Debug.Log("Dash is " + dash);
         Debug.Log("Shield is " + shield);
     }
@@ -33,6 +34,7 @@ public class SetImplant : MonoBehaviour
     {
         PlayerPrefs.SetInt("Shield", 1);
         PlayerPrefs.SetInt("Dash", 0);
+        CheckPrefs();
         Debug.Log("Dash is " + dash);
         Debug.Log("Shield is " + shield);
     }

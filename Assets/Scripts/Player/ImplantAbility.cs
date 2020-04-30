@@ -96,9 +96,10 @@ public class ImplantAbility : MonoBehaviour
     #region Biotic Dash
     public void BioticDash()
     {
+        Debug.Log("Dash Called");
         RaycastHit2D hit;
         if (bDash && refreshImplant == true)
-        {
+        {           
             dashing = true;
             dashEnd = muzzle.transform.right;
 
@@ -127,7 +128,7 @@ public class ImplantAbility : MonoBehaviour
 
     void Dash()
     {
-       
+        Debug.Log("Dash Activated");
         animator.SetBool("IsDashing", true);
         print("animator true");
 
@@ -171,8 +172,10 @@ public class ImplantAbility : MonoBehaviour
     #region Shield
     public void Shield()
     {
+        Debug.Log("Shield Called");
         if (shieldActive && shieldOn == false)
         {
+            Debug.Log("Shield Activated");
             shieldOn = true;
             shieldObj.SetActive(true);
             shieldAnimator.SetTrigger("ShieldUp");
