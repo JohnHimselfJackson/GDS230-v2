@@ -72,6 +72,7 @@ public class GenericPlayerWeapon : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile, firePosition.position, firePosition.rotation);
         newProjectile.GetComponent<PlayerBullet>().SetBulletValues((int)damage, projectileSpeed, projectileSizeMulti);
+        FindObjectOfType<AudioManager>().Play("PlayerShoot");
         //Player.Ammo - ammoPerShot;
     }
     public virtual void GenerateRandomWeaponStats(float qualityDecimal)
